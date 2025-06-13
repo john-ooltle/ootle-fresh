@@ -12,74 +12,55 @@ export default function Home() {
           <a href="#" className="hover:text-blue-600">Login</a>
         </nav>
       </header>
+
       {/* Hero Section */}
- <section className="relative min-h-[80vh] flex flex-col justify-center px-6 bg-white overflow-hidden">
-  <img
-    src="/hero-bg.webp"
-    alt=""
-    aria-hidden="true"
-    className="absolute inset-0 w-full h-full object-cover opacity-40 z-0"
-  />
+      <section className="relative min-h-[80vh] flex flex-col justify-center px-6 bg-white overflow-hidden">
+        <img
+          src="/hero-bg.webp"
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 w-full h-full object-cover opacity-40 z-0"
+        />
 
-  <div className="relative z-10 max-w-3xl mx-auto text-center">
-    <h1 className="text-4xl md:text-5xl font-extrabold leading-tight text-gray-900">
-      Results-first marketing for startups and seed-stage teams
-    </h1>
-    <p className="mt-4 text-lg text-gray-600">
-      AI-informed strategy, expert execution.
-    </p>
-    <button className="mt-8 bg-blue-600 text-white px-6 py-3 rounded-xl font-medium hover:bg-blue-700 transition">
-      Book a discovery call
-    </button>
-  </div>
-</section>
-{/* Why Ootle */}
-<section className="py-24 px-6 bg-white">
-  <div className="text-center mb-16 max-w-2xl mx-auto">
-    <h2 className="text-3xl font-bold">Why Ootle?</h2>
-    <p className="mt-4 text-gray-600 text-lg">
-      We help early-stage teams go further, faster — with clarity, speed, and execution built in.
-    </p>
-  </div>
-
-  <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto">
-    <div className="p-6 rounded-xl border shadow hover:shadow-lg transition text-center">
-      <div className="text-blue-600 text-3xl mb-4">🚀</div>
-      <h3 className="text-xl font-semibold mb-2">Startup Specialist</h3>
-      <p className="text-gray-600">We’ve worked with dozens of early-stage teams — we speak your language.</p>
-    </div>
-
-    <div className="p-6 rounded-xl border shadow hover:shadow-lg transition text-center">
-      <div className="text-blue-600 text-3xl mb-4">🧠</div>
-      <h3 className="text-xl font-semibold mb-2">AI + Human Strategy</h3>
-      <p className="text-gray-600">We blend the speed of AI with expert-led insight and positioning.</p>
-    </div>
-
-    <div className="p-6 rounded-xl border shadow hover:shadow-lg transition text-center">
-      <div className="text-blue-600 text-3xl mb-4">🛠️</div>
-      <h3 className="text-xl font-semibold mb-2">Execution Included</h3>
-      <p className="text-gray-600">From copy to funnels to automation — we build, not just advise.</p>
-    </div>
-  </div>
-</section>
-      {/* Features Section */}
-      <section className="py-24 px-6 bg-white">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold">Why Ootle?</h2>
-          <p className="mt-2 text-gray-600">We make building and scaling your startup easier than ever.</p>
+        <div className="relative z-10 max-w-3xl mx-auto text-center">
+          <h1 className="text-4xl md:text-5xl font-extrabold leading-tight text-gray-900">
+            Results-first marketing for startups and seed-stage teams
+          </h1>
+          <p className="mt-4 text-lg text-gray-600">
+            AI-informed strategy, expert execution.
+          </p>
+          <button className="mt-8 bg-blue-600 text-white px-6 py-3 rounded-xl font-medium hover:bg-blue-700 transition">
+            Book a discovery call
+          </button>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto">
-          <div className="p-6 rounded-xl border shadow hover:shadow-lg transition">
-            <h3 className="text-xl font-semibold mb-2">AI-Driven Insights</h3>
-            <p className="text-gray-600">Surface the most impactful tasks and automate the rest.</p>
+      </section>
+
+      {/* Why Ootle Section - Updated for Applyze style */}
+      <section className="py-24 px-6 bg-[#FAF8FF]">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 className="text-3xl font-bold mb-4">Why Ootle?</h2>
+            <p className="text-gray-600 mb-6 text-lg">
+              We help early-stage teams go further, faster — with clarity, speed, and execution built in.
+            </p>
+            <ul className="space-y-4 text-gray-700">
+              <li className="flex items-start gap-3">
+                <span className="text-blue-600 text-xl">🚀</span>
+                <span><strong>Startup Specialist</strong><br /> We’ve worked with dozens of early-stage teams — we speak your language.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-blue-600 text-xl">🧠</span>
+                <span><strong>AI + Human Strategy</strong><br /> We blend the speed of AI with expert-led insight and positioning.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-blue-600 text-xl">🛠️</span>
+                <span><strong>Execution Included</strong><br /> From copy to funnels to automation — we build, not just advise.</span>
+              </li>
+            </ul>
           </div>
-          <div className="p-6 rounded-xl border shadow hover:shadow-lg transition">
-            <h3 className="text-xl font-semibold mb-2">Modular Components</h3>
-            <p className="text-gray-600">Choose from best-practice blocks and launch fast.</p>
-          </div>
-          <div className="p-6 rounded-xl border shadow hover:shadow-lg transition">
-            <h3 className="text-xl font-semibold mb-2">Scalable Infrastructure</h3>
-            <p className="text-gray-600">Built on Next.js and Vercel for performance at scale.</p>
+
+          <div className="hidden md:block">
+            <img src="/homeone-reviews-one-image.webp" alt="Dashboard preview" className="rounded-2xl shadow-xl" />
           </div>
         </div>
       </section>
