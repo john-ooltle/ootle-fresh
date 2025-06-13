@@ -4,17 +4,24 @@ export default function Home() {
     <div className="bg-white text-gray-900">
       {/* Hero Section */}
       <img src="/ootle-logo.png" alt="Ootle logo" className="h-10 mb-4" />
-      <section className="min-h-screen flex flex-col justify-center items-center text-center px-6 bg-gradient-to-br from-white to-blue-50">
-        <h1 className="text-5xl font-extrabold leading-tight max-w-3xl">
-          Build smarter, launch faster with <span className="text-blue-600">Ootle</span>
-        </h1>
-        <p className="mt-4 text-lg text-gray-600 max-w-xl">
-          The AI-powered platform for founders and teams to turn ideas into scalable products.
-        </p>
-        <button className="mt-8 bg-blue-600 text-white px-6 py-3 rounded-xl font-medium hover:bg-blue-700 transition">
-          Get Started
-        </button>
-      </section>
+     <section className="relative min-h-screen flex flex-col justify-center items-center text-center px-6 bg-white overflow-hidden">
+  <img
+    src="/hero-bg.webp"
+    alt=""
+    aria-hidden="true"
+    className="absolute inset-0 w-full h-full object-cover opacity-50"
+  />
+
+  <h1 className="text-5xl font-extrabold leading-tight max-w-3xl">
+    Build smarter, launch faster with <span className="text-blue-600">Ootle</span>
+  </h1>
+  <p className="mt-4 text-lg text-gray-600 max-w-xl">
+    The AI-powered platform for founders and teams to turn ideas into scalable products.
+  </p>
+  <button className="mt-8 bg-blue-600 text-white px-6 py-3 rounded-xl font-medium hover:bg-blue-700 transition">
+    Get Started
+  </button>
+</section>
 
       {/* Features Section */}
       <section className="py-24 px-6 bg-white">
