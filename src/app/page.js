@@ -1,27 +1,38 @@
-/* eslint-disable react/no-unescaped-entities */
 export default function Home() {
   return (
     <div className="bg-white text-gray-900">
-      {/* Hero Section */}
-      <img src="/ootle-logo.png" alt="Ootle logo" className="h-10 mb-4" />
-     <section className="relative min-h-screen flex flex-col justify-center items-center text-center px-6 bg-white overflow-hidden">
-  <img
-    src="/hero-bg.webp"
-    alt=""
-    aria-hidden="true"
-    className="absolute inset-0 w-full h-full object-cover opacity-50"
-  />
+      {/* Header / Nav */}
+      <header className="flex items-center justify-between px-6 py-4 max-w-7xl mx-auto">
+        <img src="/ootle-logo.png" alt="Ootle logo" className="h-10" />
+        <nav className="space-x-6 text-sm text-gray-600">
+          <a href="#" className="hover:text-blue-600">Product</a>
+          <a href="#" className="hover:text-blue-600">Pricing</a>
+          <a href="#" className="hover:text-blue-600">Docs</a>
+          <a href="#" className="hover:text-blue-600">Login</a>
+        </nav>
+      </header>
 
-  <h1 className="text-5xl font-extrabold leading-tight max-w-3xl">
-    Build smarter, launch faster with <span className="text-blue-600">Ootle</span>
-  </h1>
-  <p className="mt-4 text-lg text-gray-600 max-w-xl">
-    The AI-powered platform for founders and teams to turn ideas into scalable products.
-  </p>
-  <button className="mt-8 bg-blue-600 text-white px-6 py-3 rounded-xl font-medium hover:bg-blue-700 transition">
-    Get Started
-  </button>
-</section>
+      {/* Hero Section */}
+      <section className="relative min-h-[80vh] flex flex-col justify-center px-6 bg-white overflow-hidden">
+        <img
+          src="/hero-bg.webp"
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 w-full h-full object-cover opacity-40 z-0"
+        />
+
+        <div className="relative z-10 max-w-3xl mx-auto text-center">
+          <h1 className="text-5xl font-extrabold leading-tight">
+            Build smarter, launch faster with <span className="text-blue-600">Ootle</span>
+          </h1>
+          <p className="mt-4 text-lg text-gray-600">
+            The AI-powered platform for founders and teams to turn ideas into scalable products.
+          </p>
+          <button className="mt-8 bg-blue-600 text-white px-6 py-3 rounded-xl font-medium hover:bg-blue-700 transition">
+            Get Started
+          </button>
+        </div>
+      </section>
 
       {/* Features Section */}
       <section className="py-24 px-6 bg-white">
