@@ -34,37 +34,50 @@ export default function Home() {
           </button>
         </div>
       </section>
+      {/* Why Ootle Section  */}
+<section className="py-24 px-6 bg-[#FAF8FF]">
+  <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+    {/* Left column: text */}
+    <div>
+      <h2 className="text-3xl font-bold mb-4">Why Ootle?</h2>
+      <p className="text-gray-600 mb-6 text-lg">
+        We help early-stage teams go further, faster — with clarity, speed, and execution built in.
+      </p>
+      <ul className="space-y-4 text-gray-700">
+        <li className="flex items-start gap-3">
+          <span className="text-blue-600 text-xl">🚀</span>
+          <span>
+            <strong>Startup Specialist</strong><br />
+            We’ve worked with dozens of early-stage teams — we speak your language.
+          </span>
+        </li>
+        <li className="flex items-start gap-3">
+          <span className="text-blue-600 text-xl">🧠</span>
+          <span>
+            <strong>AI + Human Strategy</strong><br />
+            We blend the speed of AI with expert-led insight and positioning.
+          </span>
+        </li>
+        <li className="flex items-start gap-3">
+          <span className="text-blue-600 text-xl">🛠️</span>
+          <span>
+            <strong>Execution Included</strong><br />
+            From copy to funnels to automation — we build, not just advise.
+          </span>
+        </li>
+      </ul>
+    </div>
 
-      {/* Why Ootle Section - Updated for Applyze style */}
-      <section className="py-24 px-6 bg-[#FAF8FF]">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div>
-            <h2 className="text-3xl font-bold mb-4">Why Ootle?</h2>
-            <p className="text-gray-600 mb-6 text-lg">
-              We help early-stage teams go further, faster — with clarity, speed, and execution built in.
-            </p>
-            <ul className="space-y-4 text-gray-700">
-              <li className="flex items-start gap-3">
-                <span className="text-blue-600 text-xl">🚀</span>
-                <span><strong>Startup Specialist</strong><br /> We’ve worked with dozens of early-stage teams — we speak your language.</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-blue-600 text-xl">🧠</span>
-                <span><strong>AI + Human Strategy</strong><br /> We blend the speed of AI with expert-led insight and positioning.</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-blue-600 text-xl">🛠️</span>
-                <span><strong>Execution Included</strong><br /> From copy to funnels to automation — we build, not just advise.</span>
-              </li>
-            </ul>
-          </div>
-
-          <div className="hidden md:block">
-            <img src="/homeone-reviews-one-image.webp" alt="Dashboard preview" className="rounded-2xl shadow-xl" />
-          </div>
-        </div>
-      </section>
-
+    {/* Right column: image */}
+    <div className="hidden md:block">
+      <img
+        src="/homeone-reviews-one-image.webp"
+        alt="Dashboard preview"
+        className="rounded-2xl shadow-xl"
+      />
+    </div>
+  </div>
+</section>
       {/* How It Works */}
       <section className="bg-blue-50 py-24 px-6">
         <div className="max-w-4xl mx-auto text-center">
