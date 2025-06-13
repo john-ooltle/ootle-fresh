@@ -12,29 +12,27 @@ export default function Home() {
           <a href="#" className="hover:text-blue-600">Login</a>
         </nav>
       </header>
-
       {/* Hero Section */}
-      <section className="relative min-h-[80vh] flex flex-col justify-center px-6 bg-white overflow-hidden">
-        <img
-          src="/hero-bg.webp"
-          alt=""
-          aria-hidden="true"
-          className="absolute inset-0 w-full h-full object-cover opacity-40 z-0"
-        />
+ <section className="relative min-h-[80vh] flex flex-col justify-center px-6 bg-white overflow-hidden">
+  <img
+    src="/hero-bg.webp"
+    alt=""
+    aria-hidden="true"
+    className="absolute inset-0 w-full h-full object-cover opacity-40 z-0"
+  />
 
-        <div className="relative z-10 max-w-3xl mx-auto text-center">
-          <h1 className="text-5xl font-extrabold leading-tight">
-            Build smarter, launch faster with <span className="text-blue-600">Ootle</span>
-          </h1>
-          <p className="mt-4 text-lg text-gray-600">
-            The AI-powered platform for founders and teams to turn ideas into scalable products.
-          </p>
-          <button className="mt-8 bg-blue-600 text-white px-6 py-3 rounded-xl font-medium hover:bg-blue-700 transition">
-            Get Started
-          </button>
-        </div>
-      </section>
-
+  <div className="relative z-10 max-w-3xl mx-auto text-center">
+    <h1 className="text-4xl md:text-5xl font-extrabold leading-tight text-gray-900">
+      Results-first marketing for startups and seed-stage teams
+    </h1>
+    <p className="mt-4 text-lg text-gray-600">
+      AI-informed strategy, expert execution.
+    </p>
+    <button className="mt-8 bg-blue-600 text-white px-6 py-3 rounded-xl font-medium hover:bg-blue-700 transition">
+      Book a discovery call
+    </button>
+  </div>
+</section>
       {/* Features Section */}
       <section className="py-24 px-6 bg-white">
         <div className="text-center mb-16">
