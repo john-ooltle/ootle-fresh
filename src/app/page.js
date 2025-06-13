@@ -36,65 +36,43 @@ export default function Home() {
       </section>
       {/* Why Ootle Section  */}
 <section className="py-24 px-6 bg-[#FAF8FF]">
-  <div className="text-center mb-16 max-w-2xl mx-auto">
-    <h2 className="text-3xl font-bold">Why Ootle?</h2>
-    <p className="mt-4 text-gray-600 text-lg">
-      We help early-stage teams go further, faster — with clarity, speed, and execution built in.
+  <div className="text-center mb-16 max-w-3xl mx-auto">
+    <h2 className="text-4xl font-extrabold mb-4">Why Ootle?</h2>
+    <p className="text-gray-700 text-lg">
+      We help early-stage teams{' '}
+      <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#4d5ff8] to-[#ee6b60] font-semibold">
+        go further, faster
+      </span>{' '}
+      — with clarity, speed, and execution built in.
     </p>
   </div>
 
   <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-    <div className="p-6 rounded-2xl bg-white shadow-md hover:shadow-lg transition text-left">
+    <div className="p-6 rounded-2xl text-white shadow-md hover:shadow-xl transition bg-gradient-to-br from-[#4d5ff8] to-[#6d7dfb]">
       <div className="text-3xl mb-4">🚀</div>
       <h3 className="text-xl font-semibold mb-2">Startup Specialist</h3>
-      <p className="text-gray-600">
+      <p>
         We’ve worked with dozens of early-stage teams — we speak your language.
       </p>
     </div>
 
-    <div className="p-6 rounded-2xl bg-white shadow-md hover:shadow-lg transition text-left">
+    <div className="p-6 rounded-2xl text-white shadow-md hover:shadow-xl transition bg-gradient-to-br from-[#ee6b60] to-[#f78f7e]">
       <div className="text-3xl mb-4">🧠</div>
       <h3 className="text-xl font-semibold mb-2">AI + Human Strategy</h3>
-      <p className="text-gray-600">
+      <p>
         We blend the speed of AI with expert-led insight and positioning.
       </p>
     </div>
 
-    <div className="p-6 rounded-2xl bg-white shadow-md hover:shadow-lg transition text-left">
+    <div className="p-6 rounded-2xl text-white shadow-md hover:shadow-xl transition bg-gradient-to-br from-[#7b5cf9] to-[#af7efc]">
       <div className="text-3xl mb-4">🛠️</div>
       <h3 className="text-xl font-semibold mb-2">Execution Included</h3>
-      <p className="text-gray-600">
+      <p>
         From copy to funnels to automation — we build, not just advise.
       </p>
     </div>
   </div>
 </section>
-      {/* How It Works */}
-      <section className="bg-blue-50 py-24 px-6">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold">How it works</h2>
-          <p className="mt-2 text-gray-600">From idea to product in days, not months.</p>
-
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
-            <div>
-              <span className="text-blue-600 text-lg font-bold">1.</span>
-              <h3 className="font-semibold mt-2">Plan</h3>
-              <p className="text-gray-600">Define your value prop, users, and workflow in minutes.</p>
-            </div>
-            <div>
-              <span className="text-blue-600 text-lg font-bold">2.</span>
-              <h3 className="font-semibold mt-2">Build</h3>
-              <p className="text-gray-600">Use Ootle's component library and AI-generated templates.</p>
-            </div>
-            <div>
-              <span className="text-blue-600 text-lg font-bold">3.</span>
-              <h3 className="font-semibold mt-2">Launch</h3>
-              <p className="text-gray-600">Push live with one click and scale confidently.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Call to Action */}
       <section className="py-20 px-6 bg-blue-600 text-white text-center">
         <h2 className="text-3xl font-bold">Launch your vision with Ootle today</h2>
