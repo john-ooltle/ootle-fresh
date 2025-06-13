@@ -33,6 +33,35 @@ export default function Home() {
     </button>
   </div>
 </section>
+{/* Why Ootle */}
+<section className="py-24 px-6 bg-white">
+  <div className="text-center mb-16 max-w-2xl mx-auto">
+    <h2 className="text-3xl font-bold">Why Ootle?</h2>
+    <p className="mt-4 text-gray-600 text-lg">
+      We help early-stage teams go further, faster — with clarity, speed, and execution built in.
+    </p>
+  </div>
+
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto">
+    <div className="p-6 rounded-xl border shadow hover:shadow-lg transition text-center">
+      <div className="text-blue-600 text-3xl mb-4">🚀</div>
+      <h3 className="text-xl font-semibold mb-2">Startup Specialist</h3>
+      <p className="text-gray-600">We’ve worked with dozens of early-stage teams — we speak your language.</p>
+    </div>
+
+    <div className="p-6 rounded-xl border shadow hover:shadow-lg transition text-center">
+      <div className="text-blue-600 text-3xl mb-4">🧠</div>
+      <h3 className="text-xl font-semibold mb-2">AI + Human Strategy</h3>
+      <p className="text-gray-600">We blend the speed of AI with expert-led insight and positioning.</p>
+    </div>
+
+    <div className="p-6 rounded-xl border shadow hover:shadow-lg transition text-center">
+      <div className="text-blue-600 text-3xl mb-4">🛠️</div>
+      <h3 className="text-xl font-semibold mb-2">Execution Included</h3>
+      <p className="text-gray-600">From copy to funnels to automation — we build, not just advise.</p>
+    </div>
+  </div>
+</section>
       {/* Features Section */}
       <section className="py-24 px-6 bg-white">
         <div className="text-center mb-16">
