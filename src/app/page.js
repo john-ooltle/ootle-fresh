@@ -173,7 +173,11 @@ export default function Home() {
       {/* Services (2) outcome-led */}
       <section id="services" className="mx-auto max-w-7xl px-6 py-16">
         <div className="max-w-2xl">
-          <h2 className="text-3xl font-extrabold tracking-tight">What I do</h2>
+          <h2 className="text-3xl font-extrabold tracking-tight">
+  <span className="bg-gradient-to-r from-blue-600 to-violet-600 bg-clip-text text-transparent">
+    What we do
+  </span>
+</h2>
           <p className="mt-3 text-gray-600">
             This is not a bundle of deliverables. It is senior growth ownership delivered weekly.
           </p>
@@ -221,7 +225,11 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-6 py-16">
           <div className="grid gap-10 md:grid-cols-2 md:items-start">
             <div>
-              <h2 className="text-3xl font-extrabold tracking-tight">Who this is for</h2>
+              <h2 className="text-3xl font-extrabold tracking-tight">
+  <span className="bg-gradient-to-r from-blue-600 to-violet-600 bg-clip-text text-transparent">
+    Who this is for
+  </span>
+</h2>
               <p className="mt-3 text-gray-600">
                 Bootstrapped SaaS teams with paying customers that want pipeline owned end-to-end.
               </p>
@@ -265,9 +273,11 @@ export default function Home() {
       <section id="proof" className="bg-[#F7F8FF]">
         <div className="mx-auto max-w-7xl px-6 py-16">
           <div className="max-w-2xl">
-            <h2 className="text-3xl font-extrabold tracking-tight">
-              Why this works for lean teams
-            </h2>
+           <h2 className="text-3xl font-extrabold tracking-tight">
+  <span className="bg-gradient-to-r from-blue-600 to-violet-600 bg-clip-text text-transparent">
+    Why this works for lean teams
+  </span>
+</h2>
             <p className="mt-3 text-gray-600">
               You are not buying deliverables. You are buying speed, focus, and clean decision-making.
             </p>
@@ -298,7 +308,11 @@ export default function Home() {
 
       {/* Process */}
       <section id="process" className="mx-auto max-w-7xl px-6 py-16">
-        <h2 className="text-3xl font-extrabold tracking-tight">How it works</h2>
+        <h2 className="text-3xl font-extrabold tracking-tight">
+  <span className="bg-gradient-to-r from-blue-600 to-violet-600 bg-clip-text text-transparent">
+    How it works
+  </span>
+</h2>
 
         <div className="mt-10 grid gap-6 md:grid-cols-3">
           {[
