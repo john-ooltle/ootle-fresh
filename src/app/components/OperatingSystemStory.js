@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 const steps = [
   {
@@ -33,6 +33,18 @@ const steps = [
 ];
 export default function OperatingSystemStory(){
   const [active,setActive]=useState(0);
+  const tabsRef=useRef([]);
+  const selectByKeyboard=(event,index)=>{
+    let next=index;
+    if(event.key==="ArrowRight" || event.key==="ArrowDown") next=(index+1)%steps.length;
+    else if(event.key==="ArrowLeft" || event.key==="ArrowUp") next=(index-1+steps.length)%steps.length;
+    else if(event.key==="Home") next=0;
+    else if(event.key==="End") next=steps.length-1;
+    else return;
+    event.preventDefault();
+    setActive(next);
+    tabsRef.current[next]?.focus();
+  };
   const step=steps[active];
   return <section id="system-in-action" className="relative overflow-hidden bg-[#211B41] px-5 py-20 text-white sm:px-8 lg:py-28">
     <div className="pointer-events-none absolute -right-20 top-0 h-96 w-96 rounded-full bg-[#7550C6]/25 blur-[90px]"/>
@@ -40,7 +52,7 @@ export default function OperatingSystemStory(){
       <p className="text-[11px] font-extrabold uppercase tracking-[0.18em] text-[#C5B1FF]">Explore the operating system</p>
       <div className="mt-5 flex flex-col justify-between gap-6 md:flex-row md:items-end"><h2 className="max-w-[750px] text-[clamp(2.7rem,4.6vw,4.8rem)] font-extrabold leading-[1.08] tracking-[-0.065em]">From business knowledge<br/><span className="text-[#B9A3FF]">to better execution.</span></h2><p className="max-w-[320px] text-sm leading-7 text-[#D4CDEA]">Select a stage to see how the same commercial context shapes each part of marketing.</p></div>
       <div className="mt-10 grid gap-3 sm:grid-cols-4" role="tablist" aria-label="Marketing operating system stages">
-        {steps.map((item,i)=><button key={item.id} type="button" id={`system-tab-${item.id}`} role="tab" aria-selected={active===i} aria-controls="system-panel" onClick={()=>setActive(i)} className={`group min-h-[88px] rounded-2xl border px-4 py-4 text-left transition-[background-color,border-color,transform] duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#D5C7FF] motion-safe:hover:-translate-y-1 ${active===i?"border-[#B8A4FF] bg-[#6548B8] shadow-[0_14px_30px_rgba(0,0,0,0.16)]":"border-white/20 bg-white/5 hover:border-[#A18BDD] hover:bg-white/10"}`}><span className="block text-[10px] font-bold tracking-widest text-[#D2C3FF]">{item.number}</span><span className="mt-2 block text-sm font-bold">{item.label}</span><span className={`mt-3 block h-1 rounded-full transition-colors ${active===i?"bg-[#E9DFFF]":"bg-white/15"}`}/></button>)}
+        {steps.map((item,i)=><button key={item.id} type="button" id={`system-tab-${item.id}`} role="tab" ref={el=>{tabsRef.current[i]=el;}} tabIndex={active===i?0:-1} aria-selected={active===i} aria-controls="system-panel" onKeyDown={event=>selectByKeyboard(event,i)} onClick={()=>setActive(i)} className={`group min-h-[88px] rounded-2xl border px-4 py-4 text-left transition-[background-color,border-color,transform] duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#D5C7FF] motion-safe:hover:-translate-y-1 ${active===i?"border-[#B8A4FF] bg-[#6548B8] shadow-[0_14px_30px_rgba(0,0,0,0.16)]":"border-white/20 bg-white/5 hover:border-[#A18BDD] hover:bg-white/10"}`}><span className="block text-[10px] font-bold tracking-widest text-[#D2C3FF]">{item.number}</span><span className="mt-2 block text-sm font-bold">{item.label}</span><span className={`mt-3 block h-1 rounded-full transition-colors ${active===i?"bg-[#E9DFFF]":"bg-white/15"}`}/></button>)}
       </div>
       <div role="tabpanel" id="system-panel" aria-labelledby={`system-tab-${step.id}`} className="mt-5 grid gap-6 rounded-[30px] border border-white/15 bg-[#312951] p-5 shadow-[0_28px_65px_rgba(0,0,0,0.18)] sm:p-8 lg:grid-cols-[0.85fr_1.15fr] lg:gap-12">
         <div className="flex flex-col justify-center py-4"><span className="text-xs font-bold uppercase tracking-[0.16em] text-[#BDA8FF]">Stage {step.number} / 04</span><h3 className="mt-5 max-w-[500px] text-3xl font-extrabold leading-tight tracking-[-0.045em] sm:text-4xl">{step.heading}</h3><p className="mt-5 max-w-[450px] text-sm leading-7 text-[#DDD5F1]">{step.body}</p><div className="mt-9 flex items-center gap-3"><span className="h-2.5 w-2.5 rounded-full bg-[#B9A4FF]"/><span className="text-xs font-bold text-[#E3D8FF]">One connected system, not disconnected prompts</span></div></div>
