@@ -1,3 +1,4 @@
+import MotionEnhancements from "./components/MotionEnhancements";
 /* eslint-disable react/no-unescaped-entities */
 export const metadata = {
   title: "Ootle | Senior Marketing Leadership & AI-Powered Execution",
@@ -28,7 +29,7 @@ const serviceCards = [
   { number: "03", title: "Marketing Consultancy", description: "Practical help with your biggest marketing opportunities.", detail: "SEO, PPC, conversion, analytics and strategy, built around your commercial goals.", href: "/marketing-consultancy", theme: "consulting" },
 ];
 function MiniCard({ title, items, type = "purple" }) {
-  return <div className="relative rounded-[18px] border border-white/80 bg-white/90 p-4 shadow-[0_18px_50px_rgba(55,40,130,0.12)] backdrop-blur-md sm:p-5">
+  return <div className="ootle-interactive ootle-hero-panel relative rounded-[18px] border border-white/80 bg-white/90 p-4 shadow-[0_18px_50px_rgba(55,40,130,0.12)] backdrop-blur-md sm:p-5">
     <div className="mb-3 text-[12px] font-bold text-[#1C1B3B]">{title}</div>
     <div className="space-y-2">{items.map((item, i) => <div key={item} className="flex items-center gap-2 text-[10px] font-medium text-[#515173] sm:text-[11px]"><span className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-md text-[10px] ${type === "peach" ? "bg-[#FFE8DE] text-[#9C6185]" : type === "mint" ? "bg-[#DDF6F4] text-[#258D99]" : "bg-[#EAE5FF] text-[#6650CC]"}`}>{["▤", "✦", "◎", "▥"][i]}</span>{item}</div>)}</div>
   </div>;
@@ -36,7 +37,7 @@ function MiniCard({ title, items, type = "purple" }) {
 function KnowledgeVisual() {
   return <div className="relative mx-auto w-full max-w-[630px]">
     <div className="pointer-events-none absolute inset-5 rounded-[40%] bg-[#C8B9FF]/35 blur-3xl" />
-    <div className="relative grid grid-cols-2 gap-3 pb-3 sm:gap-4">
+    <div data-reveal className="relative grid grid-cols-2 gap-3 pb-3 sm:gap-4">
       <MiniCard title="Business knowledge" items={sources[0].items} />
       <MiniCard title="Commercial strategy" items={sources[1].items} type="peach" />
     </div>
@@ -47,7 +48,7 @@ function KnowledgeVisual() {
         <div className="mt-3 grid grid-cols-4 gap-2">{[["▤", "Understand"], ["▦", "Plan"], ["✧", "Create"], ["▥", "Measure"]].map(([icon, label], i) => <div key={label} className="rounded-xl bg-[#F5F3FF] px-1 py-3 text-center"><div className={`mx-auto flex h-8 w-8 items-center justify-center rounded-lg text-lg ${i === 2 ? "bg-[#DFD5FF] text-[#6C46E8]" : "bg-white text-[#6552C6]"}`}>{icon}</div><div className="mt-2 text-[9px] font-semibold text-[#393459]">{label}</div></div>)}</div>
       </div>
     </div>
-    <div className="relative grid grid-cols-2 gap-3 pt-1 sm:gap-4">
+    <div data-reveal className="relative grid grid-cols-2 gap-3 pt-1 sm:gap-4">
       <MiniCard title="AI-assisted workflows" items={workflows} />
       <MiniCard title="Marketing execution" items={execution} type="mint" />
     </div>
@@ -55,7 +56,7 @@ function KnowledgeVisual() {
   </div>;
 }
 function BrainRow({ item }) {
-  return <div className="flex min-w-0 items-center gap-3 rounded-2xl border border-[#E7E3F5] bg-white/90 p-3 shadow-[0_8px_25px_rgba(58,48,121,0.08)] sm:p-4">
+  return <div className="ootle-interactive flex min-w-0 items-center gap-3 rounded-2xl border border-[#E7E3F5] bg-white/90 p-3 shadow-[0_8px_25px_rgba(58,48,121,0.08)] sm:p-4">
     <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl text-xl text-[#5142B0] ${item.color}`}>{item.symbol}</span>
     <div className="min-w-0"><p className="text-xs font-bold text-[#20203E]">{item.title}</p><p className="mt-1 text-[10px] leading-[1.4] text-[#666586]">{item.desc}</p></div>
   </div>;
@@ -66,12 +67,12 @@ function ServiceArt({ theme }) {
   return <div aria-hidden="true" className="absolute bottom-6 right-5 flex h-36 w-36 items-end justify-center gap-3 rounded-2xl border border-white bg-white/90 p-5 shadow-[0_18px_50px_rgba(132,88,65,0.15)]"><span className="h-[38%] w-6 rounded-t-md bg-[#C1B2F1]"/><span className="h-[62%] w-6 rounded-t-md bg-[#8F77DE]"/><span className="h-[87%] w-6 rounded-t-md bg-[#5844C4]"/><span className="absolute right-4 top-4 text-[#5C49C9]">↗</span></div>;
 }
 export default function Home() {
-  return <main className="overflow-x-hidden bg-white text-[#1B1B3D]">
+  return <><MotionEnhancements/><main className="overflow-x-hidden bg-white text-[#1B1B3D]">
     <header className="relative z-20 border-b border-[#EEEAF8] bg-[#F8F6FF]">
       <div className="mx-auto flex max-w-[1300px] items-center justify-between gap-4 px-5 py-5 sm:px-8">
         <a href="/" aria-label="Ootle home" className="text-[28px] font-black tracking-[-0.09em]">ootle<span className="text-[#7254ED]">.</span></a>
         <nav className="hidden items-center gap-8 text-[13px] font-semibold text-[#29274A] md:flex"><a href="#services" className="hover:text-[#7254ED]">Services</a><a href="#approach" className="hover:text-[#7254ED]">Approach</a><a href="#why-ootle" className="hover:text-[#7254ED]">Why Ootle</a></nav>
-        <a href="mailto:hello@ootle.io?subject=Ootle%20enquiry" className="rounded-full bg-[#6B4CE8] px-5 py-3 text-xs font-bold text-white shadow-[0_7px_20px_rgba(107,76,232,0.25)] transition hover:bg-[#5637C9]">Get in touch <span className="ml-2">↗</span></a>
+        <a href="mailto:hello@ootle.io?subject=Ootle%20enquiry" className="ootle-button rounded-full bg-[#6B4CE8] px-5 py-3 text-xs font-bold text-white shadow-[0_7px_20px_rgba(107,76,232,0.25)] transition hover:bg-[#5637C9]">Get in touch <span className="ml-2">↗</span></a>
       </div>
     </header>
 
@@ -82,17 +83,17 @@ export default function Home() {
           <p className="mb-6 text-[10px] font-extrabold uppercase tracking-[0.18em] text-[#6B4CE8]">Senior marketing leadership. AI-powered execution.</p>
           <h1 className="max-w-[660px] text-[clamp(3.25rem,5.4vw,5.9rem)] font-extrabold leading-[1.04] tracking-[-0.07em]">Less noise.<br/>More knowing.<br/><span className="text-[#7151E7]">Better marketing.</span></h1>
           <p className="mt-7 max-w-[520px] text-[16px] leading-[1.75] text-[#555573] sm:text-[18px]">We help growing businesses build smarter marketing functions by combining senior marketing expertise with AI-powered systems tailored to their business.</p>
-          <div className="mt-8 flex flex-wrap gap-3"><a href="mailto:hello@ootle.io?subject=Ootle%20enquiry" className="rounded-full bg-[#6B4CE8] px-7 py-3.5 text-sm font-bold text-white shadow-[0_12px_30px_rgba(108,76,230,0.25)] hover:bg-[#5739D2]">Get in touch <span className="ml-2">↗</span></a><a href="#approach" className="rounded-full border border-[#CEC4EF] bg-white/80 px-7 py-3.5 text-sm font-bold text-[#252248] hover:border-[#7054E0]">See how it works <span className="ml-2 text-[#7151E7]">▶</span></a></div>
+          <div data-reveal className="mt-8 flex flex-wrap gap-3"><a href="mailto:hello@ootle.io?subject=Ootle%20enquiry" className="ootle-button rounded-full bg-[#6B4CE8] px-7 py-3.5 text-sm font-bold text-white shadow-[0_12px_30px_rgba(108,76,230,0.25)] hover:bg-[#5739D2]">Get in touch <span className="ml-2">↗</span></a><a href="#approach" className="rounded-full border border-[#CEC4EF] bg-white/80 px-7 py-3.5 text-sm font-bold text-[#252248] hover:border-[#7054E0]">See how it works <span className="ml-2 text-[#7151E7]">▶</span></a></div>
           <div className="mt-11 grid max-w-[510px] grid-cols-3 gap-4 border-t border-[#E2DCF3] pt-6">{[["◎","Commercially focused"],["✧","AI-assisted execution"],["▥","Built for growing businesses"]].map(([icon,txt])=><div key={txt} className="flex items-start gap-2"><span className="text-2xl text-[#7051E8]">{icon}</span><span className="text-[11px] font-semibold leading-[1.4]">{txt}</span></div>)}</div>
         </div>
         <KnowledgeVisual/>
       </div>
     </section>
 
-    <section className="border-y border-[#F0EDF9] bg-white py-7"><div className="mx-auto max-w-[1300px] px-5 sm:px-8"><p className="mb-5 text-center text-[10px] font-extrabold uppercase tracking-[0.19em] text-[#7465B7]">Built for ambitious teams across</p><div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-5 text-[12px] font-semibold text-[#77769F]">{[["☁","SaaS"],["▥","Professional services"],["◇","E-commerce"],["♡","Health & fitness"],["⌂","Education"],["♧","Recruitment"]].map(([icon,txt])=><span key={txt} className="flex items-center gap-2"><span className="text-xl text-[#8581BE]">{icon}</span>{txt}</span>)}</div></div></section>
+    <section className="border-y border-[#F0EDF9] bg-white py-7"><div data-reveal className="mx-auto max-w-[1300px] px-5 sm:px-8"><p className="mb-5 text-center text-[10px] font-extrabold uppercase tracking-[0.19em] text-[#7465B7]">Built for ambitious teams across</p><div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-5 text-[12px] font-semibold text-[#77769F]">{[["☁","SaaS"],["▥","Professional services"],["◇","E-commerce"],["♡","Health & fitness"],["⌂","Education"],["♧","Recruitment"]].map(([icon,txt])=><span key={txt} className="flex items-center gap-2"><span className="text-xl text-[#8581BE]">{icon}</span>{txt}</span>)}</div></div></section>
 
     <section id="approach" className="bg-[linear-gradient(135deg,#FAF9FF_0%,#F0ECFF_65%,#F8F7FF_100%)] px-5 py-20 sm:px-8 lg:py-28">
-      <div className="mx-auto grid max-w-[1300px] items-center gap-12 lg:grid-cols-[0.75fr_1.25fr]">
+      <div data-reveal className="mx-auto grid max-w-[1300px] items-center gap-12 lg:grid-cols-[0.75fr_1.25fr]">
         <div><p className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-[#6B4CE8]">The Ootle approach</p><h2 className="mt-6 text-[clamp(2.6rem,4vw,4.4rem)] font-extrabold leading-[1.08] tracking-[-0.065em]">A business brain<br/>for better marketing.</h2><p className="mt-6 max-w-[430px] text-[16px] leading-[1.8] text-[#565575]">We capture what makes your business unique, turn it into a structured knowledge base and use it to guide AI-assisted marketing across all channels.</p><a href="/marketing-operating-system" className="mt-7 inline-flex rounded-full border border-[#BEB2E9] bg-white px-6 py-3 text-sm font-bold text-[#2D2854] shadow-sm hover:border-[#7151E7]">Explore the approach <span className="ml-3">→</span></a></div>
         <div className="relative rounded-[30px] border border-white/70 bg-white/35 p-4 shadow-[0_24px_80px_rgba(87,65,155,0.08)] sm:p-6">
           <div className="grid grid-cols-1 items-center gap-4 sm:grid-cols-[1fr_0.8fr_1fr] sm:gap-3">
@@ -105,7 +106,7 @@ export default function Home() {
       </div>
     </section>
 
-    <section id="services" className="mx-auto max-w-[1300px] px-5 py-20 sm:px-8 lg:py-28">
+    <section id="services" data-reveal className="mx-auto max-w-[1300px] px-5 py-20 sm:px-8 lg:py-28">
       <div className="flex flex-col justify-between gap-5 md:flex-row md:items-end"><div><p className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-[#6B4CE8]">Our services</p><h2 className="mt-4 text-[clamp(2.5rem,4.5vw,4.5rem)] font-extrabold leading-[1.12] tracking-[-0.065em]">Three ways to work with us.</h2></div><p className="max-w-[380px] text-[14px] leading-7 text-[#656382]">Whether you need strategic leadership, a complete marketing system or help with specific projects, we tailor our approach to your goals.</p></div>
       <div className="mt-9 grid gap-4 md:grid-cols-3">{serviceCards.map(card=><a key={card.number} href={card.href} className={`group relative flex min-h-[365px] flex-col overflow-hidden rounded-[22px] p-7 transition hover:-translate-y-1 hover:shadow-[0_20px_45px_rgba(55,40,110,0.15)] ${card.theme === "cmo" ? "bg-[linear-gradient(135deg,#171633,#3B276D_75%,#6E4AA0)] text-white" : card.theme === "os" ? "bg-[linear-gradient(135deg,#EEE9FF,#DDD5FA)] text-[#252143]" : "bg-[linear-gradient(135deg,#FBF0E8,#F6E7DF)] text-[#252143]"}`}>
         <span className={`text-[13px] font-medium ${card.theme === "cmo" ? "text-[#D7C8FF]" : "text-[#6D59B3]"}`}>{card.number}</span>
@@ -133,5 +134,4 @@ export default function Home() {
 
     <section className="relative overflow-hidden bg-[radial-gradient(ellipse_at_90%_100%,#4B347B_0%,#1A1839_55%,#14132D_100%)] px-5 py-20 text-white sm:px-8"><div className="pointer-events-none absolute -bottom-44 -left-20 h-80 w-80 rounded-full bg-[#8258C6]/20 blur-3xl"/><div className="relative mx-auto flex max-w-[1300px] flex-col justify-between gap-8 md:flex-row md:items-center"><div><p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#B8A7E6]">Ready to build a smarter marketing function?</p><h2 className="mt-5 max-w-[760px] text-[clamp(2.2rem,4vw,4.4rem)] font-extrabold leading-[1.15] tracking-[-0.06em]">Let's make your marketing work harder.</h2></div><div className="shrink-0"><a href="mailto:hello@ootle.io?subject=Marketing%20enquiry" className="inline-flex rounded-full bg-[#7954EC] px-8 py-4 text-sm font-bold text-white shadow-[0_10px_35px_rgba(114,84,232,0.25)] hover:bg-[#8A6AFF]">Get in touch <span className="ml-3">↗</span></a><p className="mt-3 text-center text-xs text-[#D0C8E8]">A conversation about your priorities.</p></div></div></section>
     <footer className="bg-[#14132D] px-5 py-7 text-white/60 sm:px-8"><div className="mx-auto flex max-w-[1300px] flex-wrap items-center justify-between gap-4 text-xs"><a href="/" className="text-2xl font-black tracking-[-0.09em] text-white">ootle.</a><span>© {new Date().getFullYear()} Ootle · Senior marketing expertise, smarter execution.</span><a className="hover:text-white" href="mailto:hello@ootle.io">hello@ootle.io ↗</a></div></footer>
-  </main>;
-}
+  </main></>;}
