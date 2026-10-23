@@ -24,11 +24,6 @@ const rightBrain = [
   { symbol: "◉", title: "Performance insights", desc: "Analytics, reporting and recommendations", color: "bg-[#DFF5F3]" },
   { symbol: "ϟ", title: "Consistent execution", desc: "On-brand, commercially focused marketing", color: "bg-[#FFF0DE]" },
 ];
-const serviceCards = [
-  { number: "01", title: "Fractional CMO", description: "Senior marketing leadership, without the full-time CMO.", detail: "Strategy, execution and accountability to help you acquire more customers and build a stronger marketing function.", href: "/fractional-cmo", theme: "cmo" },
-  { number: "02", title: "AI Marketing Operating System", description: "Give your marketing team a business brain for AI.", detail: "We set up a structured knowledge base, workflows and tool integrations, so you can do more with a smaller team.", href: "/marketing-operating-system", theme: "os" },
-  { number: "03", title: "Marketing Consultancy", description: "Practical help with your biggest marketing opportunities.", detail: "SEO, PPC, conversion, analytics and strategy, built around your commercial goals.", href: "/marketing-consultancy", theme: "consulting" },
-];
 function MiniCard({ title, items, type = "purple" }) {
   return <div className="ootle-interactive ootle-hero-panel relative rounded-[18px] border border-white/80 bg-white/90 p-4 shadow-[0_18px_50px_rgba(55,40,130,0.12)] backdrop-blur-md sm:p-5">
     <div className="mb-3 text-[12px] font-bold text-[#1C1B3B]">{title}</div>
@@ -61,11 +56,6 @@ function BrainRow({ item }) {
     <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl text-xl text-[#5142B0] ${item.color}`}>{item.symbol}</span>
     <div className="min-w-0"><p className="text-xs font-bold text-[#20203E]">{item.title}</p><p className="mt-1 text-[10px] leading-[1.4] text-[#666586]">{item.desc}</p></div>
   </div>;
-}
-function ServiceArt({ theme }) {
-  if (theme === "cmo") return <div aria-hidden="true" className="absolute bottom-0 right-0 h-[170px] w-[180px]"><div className="absolute bottom-5 right-7 h-24 w-28 rounded-2xl bg-[#9D89EE]/70 shadow-xl"/><div className="absolute bottom-12 right-16 flex h-24 w-24 flex-col items-center justify-center rounded-2xl border border-white/30 bg-[#DCD4FF] shadow-[0_20px_35px_rgba(0,0,0,0.2)]"><span className="text-3xl text-[#5441A9]">♟</span><span className="mt-1 h-1.5 w-12 rounded-full bg-[#A597E6]"/><span className="mt-1 h-1.5 w-9 rounded-full bg-[#B7ABED]"/></div><div className="absolute bottom-5 right-0 flex h-20 w-20 items-end gap-1.5 rounded-xl bg-[#E5A6D0]/85 p-4 shadow-xl">{[35, 60, 85].map((h) => <span key={h} className="w-3 rounded-t bg-[#6651C5]" style={{height:`${h}%`}}/>)}</div></div>;
-  if (theme === "os") return <div aria-hidden="true" className="absolute bottom-6 right-5 h-[165px] w-[170px]"><div className="absolute inset-4 rotate-[-10deg] rounded-[26px] bg-[#B9A8F8]/50 blur-xl"/><div className="absolute right-1 top-2 h-24 w-24 rounded-2xl border border-white bg-white/70 p-3 shadow-xl"><span className="text-3xl text-[#7157DA]">✦</span><div className="mt-2 h-2 w-12 rounded-full bg-[#B7A8EF]"/><div className="mt-2 h-2 w-16 rounded-full bg-[#D8CEF8]"/></div>{[0,1,2].map(i=><div key={i} className="absolute left-1 flex h-9 w-24 items-center gap-2 rounded-lg bg-[#6D53C7]/90 px-3 shadow-lg" style={{bottom:`${12+i*44}px`}}><span className="h-4 w-4 rounded bg-white/70"/><span className="h-1.5 w-10 rounded bg-white/50"/></div>)}</div>;
-  return <div aria-hidden="true" className="absolute bottom-6 right-5 flex h-36 w-36 items-end justify-center gap-3 rounded-2xl border border-white bg-white/90 p-5 shadow-[0_18px_50px_rgba(132,88,65,0.15)]"><span className="h-[38%] w-6 rounded-t-md bg-[#C1B2F1]"/><span className="h-[62%] w-6 rounded-t-md bg-[#8F77DE]"/><span className="h-[87%] w-6 rounded-t-md bg-[#5844C4]"/><span className="absolute right-4 top-4 text-[#5C49C9]">↗</span></div>;
 }
 export default function Home() {
   return <><MotionEnhancements/><><a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-white focus:px-5 focus:py-3 focus:text-[#242044] focus:shadow-lg">Skip to content</a><main id="main-content" className="overflow-x-hidden bg-white text-[#1B1B3D]">
