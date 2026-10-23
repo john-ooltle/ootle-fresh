@@ -1,14 +1,79 @@
-export const metadata = { title: "Ootle | Marketing consultancy, fractional CMO & AI marketing systems", description: "Senior marketing expertise, commercial strategy and AI-assisted execution for growing businesses." };
-const services=[
-{title:"Marketing consultancy",desc:"Practical support across SEO, paid acquisition, analytics, conversion and lifecycle marketing.",href:"/marketing-consultancy",label:"Explore consultancy"},
-{title:"Fractional CMO",desc:"Senior marketing leadership, commercial priorities and accountable execution without a full-time hire.",href:"/fractional-cmo",label:"Explore fractional CMO"},
-{title:"AI marketing operating system",desc:"Give your team a structured business knowledge base and repeatable, human-approved AI workflows.",href:"/marketing-operating-system",label:"Explore the operating system"}
+export const metadata = {
+  title: "Ootle — Marketing leadership, built around your business",
+  description: "Senior marketing leadership and AI-assisted marketing systems grounded in your business knowledge, commercial strategy and customers.",
+};
+
+const knowledge = [
+  { number: "01", name: "Business truth", detail: "Products · customers · positioning", tone: "bg-[#EEEAF8]" },
+  { number: "02", name: "Commercial context", detail: "Revenue · priorities · competitors", tone: "bg-[#E8E8FF]" },
+  { number: "03", name: "Marketing intelligence", detail: "Channels · opportunities · evidence", tone: "bg-[#E6F0EC]" },
 ];
-export default function Home(){return <main className="min-h-screen bg-[#F7F8FF] text-slate-900">
-<header className="border-b border-slate-200 bg-white/80"><div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-5"><a href="/" className="text-xl font-extrabold tracking-tight">Ootle<span className="text-blue-600">.</span></a><nav className="flex flex-wrap gap-4 text-sm text-slate-700"><a href="#services" className="hover:text-blue-600">Services</a><a href="#approach" className="hover:text-blue-600">Approach</a><a href="mailto:hello@ootle.io" className="hover:text-blue-600">Contact</a></nav></div></header>
-<section className="relative overflow-hidden border-b border-slate-200 bg-gradient-to-br from-white via-blue-50 to-violet-100"><div className="mx-auto max-w-6xl px-6 py-24 md:py-32"><p className="mb-5 text-sm font-semibold uppercase tracking-widest text-blue-700">Marketing leadership • Strategy • AI-assisted execution</p><h1 className="max-w-4xl text-4xl font-extrabold leading-tight tracking-tight md:text-6xl">Senior marketing expertise.<br/><span className="bg-gradient-to-r from-blue-600 to-violet-600 bg-clip-text text-transparent">Commercially intelligent execution.</span></h1><p className="mt-7 max-w-2xl text-lg leading-relaxed text-slate-600">Ootle helps growing businesses make better marketing decisions and get more done. We combine experienced marketing leadership, hands-on support and AI-assisted workflows built around your customers, competitive position and commercial goals.</p><div className="mt-9 flex flex-wrap gap-3"><a href="mailto:hello@ootle.io?subject=Let's%20talk%20about%20marketing" className="rounded-xl bg-blue-600 px-6 py-3 font-semibold text-white hover:bg-blue-700">Discuss your marketing</a><a href="#services" className="rounded-xl border border-slate-300 bg-white px-6 py-3 font-semibold hover:border-blue-500">Explore services</a></div></div></section>
-<section id="services" className="mx-auto max-w-6xl px-6 py-20"><p className="text-sm font-semibold uppercase tracking-wider text-blue-700">Ways to work with Ootle</p><h2 className="mt-3 text-3xl font-extrabold tracking-tight md:text-4xl">The support you need. Not an agency package.</h2><p className="mt-4 max-w-2xl text-slate-600">From a specific acquisition problem to ongoing marketing leadership or an AI-enabled operating system for your existing team.</p><div className="mt-10 grid gap-6 md:grid-cols-3">{services.map(s=><article key={s.title} className="flex flex-col rounded-3xl border border-slate-200 bg-white p-7 shadow-sm"><h3 className="text-xl font-bold">{s.title}</h3><p className="mt-4 flex-1 leading-relaxed text-slate-600">{s.desc}</p><a className="mt-7 font-semibold text-blue-700 hover:text-blue-900" href={s.href}>{s.label} →</a></article>)}</div></section>
-<section id="approach" className="border-y border-slate-200 bg-white"><div className="mx-auto max-w-6xl px-6 py-20"><p className="text-sm font-semibold uppercase tracking-wider text-blue-700">How we work</p><h2 className="mt-3 max-w-3xl text-3xl font-extrabold md:text-4xl">AI is only useful when it understands the business.</h2><p className="mt-5 max-w-3xl leading-relaxed text-slate-600">Generic prompts produce generic marketing. Our approach starts by capturing what makes your business work: customers, product knowledge, competitive advantages, commercial priorities and the judgement that rarely makes it into a brand brief. That context guides strategy and repeatable workflows, with people reviewing important decisions.</p><div className="mt-10 grid gap-4 md:grid-cols-5">{["Business knowledge","Commercial priorities","Marketing strategy","AI-assisted workflows","Measure and improve"].map((s,i)=><div key={s} className="rounded-2xl bg-blue-50 p-5"><span className="text-sm font-bold text-blue-700">0{i+1}</span><p className="mt-3 font-semibold">{s}</p></div>)}</div></div></section>
-<section className="mx-auto max-w-6xl px-6 py-20"><h2 className="text-3xl font-extrabold">Experienced judgement. Practical delivery.</h2><p className="mt-5 max-w-3xl leading-relaxed text-slate-600">Ootle is led by a senior marketing operator with experience across SaaS growth, acquisition, SEO, lifecycle, analytics and conversion. We focus on commercially useful work, clear priorities and execution you can measure—not activity for its own sake.</p></section>
-<section className="bg-gradient-to-r from-blue-600 to-violet-600"><div className="mx-auto flex max-w-6xl flex-col gap-6 px-6 py-16 text-white md:flex-row md:items-center md:justify-between"><div><h2 className="text-3xl font-extrabold">What does your marketing function need?</h2><p className="mt-3 text-white/90">Tell us where you're stuck. We'll discuss the most useful next step.</p></div><a className="w-fit rounded-xl bg-white px-6 py-3 font-semibold text-slate-900 hover:bg-blue-50" href="mailto:hello@ootle.io?subject=Marketing%20enquiry">Email hello@ootle.io</a></div></section>
-<footer className="mx-auto flex max-w-6xl flex-wrap justify-between gap-4 px-6 py-8 text-sm text-slate-500"><span>© {new Date().getFullYear()} Ootle</span><span>Marketing consultancy • Fractional CMO • AI marketing systems</span></footer></main>}
+
+const outputs = ["SEO & content", "Campaigns", "Email & lifecycle", "Insights & reporting"];
+
+export default function Home() {
+  return (
+    <main className="min-h-screen bg-[#F2EFF8] text-[#222034]">
+      <header className="relative z-20 border-b border-[#28243D]/10 bg-[#F2EFF8]">
+        <div className="mx-auto flex max-w-[1320px] items-center justify-between gap-5 px-6 py-6 md:px-10">
+          <a href="/" className="text-[28px] font-black tracking-[-0.09em] leading-none" aria-label="Ootle home">ootle<span className="text-[#6955D5]">.</span></a>
+          <nav className="hidden items-center gap-9 text-[13px] font-semibold tracking-wide md:flex">
+            <a href="#thinking" className="hover:text-[#6955D5]">Our thinking</a>
+            <a href="#services" className="hover:text-[#6955D5]">Services</a>
+            <a href="#approach" className="hover:text-[#6955D5]">How it works</a>
+          </nav>
+          <a href="mailto:hello@ootle.io?subject=Let's%20talk%20marketing" className="rounded-full bg-[#262238] px-5 py-3 text-xs font-bold text-white transition hover:bg-[#5745B8]">Let’s talk <span aria-hidden="true" className="ml-3">↗</span></a>
+        </div>
+      </header>
+
+      <section className="relative overflow-hidden px-6 pb-20 pt-16 md:px-10 md:pb-28 md:pt-24">
+        <div className="pointer-events-none absolute -right-48 -top-60 h-[600px] w-[600px] rounded-full border border-[#A59AD7]/30" />
+        <div className="pointer-events-none absolute -right-20 -top-32 h-[420px] w-[420px] rounded-full border border-[#A59AD7]/30" />
+        <div className="relative mx-auto max-w-[1320px]">
+          <div className="max-w-[990px]">
+            <div className="mb-9 flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.2em] text-[#675B8E]"><span className="h-[1px] w-8 bg-[#7766B8]"/> Independent marketing consultancy</div>
+            <h1 className="text-[clamp(3.7rem,8.7vw,8.5rem)] font-semibold leading-[0.98] tracking-[-0.085em]">
+              Less noise.<br/><span className="font-normal italic text-[#7463CD]">More knowing.</span><br/>Better marketing.
+            </h1>
+          </div>
+          <div className="mt-12 flex flex-col gap-8 border-t border-[#262238]/20 pt-7 md:ml-auto md:w-[47%]">
+            <p className="text-lg leading-[1.65] text-[#4D4960] md:text-[22px]">Good marketing starts with understanding the business. We bring senior marketing judgement together with AI systems that know your customers, your competitors and what actually drives growth.</p>
+            <a href="#thinking" className="group flex w-fit items-center gap-4 text-sm font-bold">Explore our approach <span className="flex h-10 w-10 items-center justify-center rounded-full border border-[#29253B] transition group-hover:bg-[#29253B] group-hover:text-white">↘</span></a>
+          </div>
+        </div>
+      </section>
+
+      <section id="thinking" className="bg-[#272439] px-6 py-20 text-[#F6F3FF] md:px-10 md:py-28">
+        <div className="mx-auto max-w-[1320px]">
+          <div className="grid gap-10 md:grid-cols-[0.85fr_1.15fr] md:gap-20">
+            <div><div className="text-[11px] font-bold uppercase tracking-[0.22em] text-[#B6ABE7]">01 / The difference</div><h2 className="mt-7 text-4xl font-medium leading-[1.07] tracking-[-0.06em] md:text-6xl">AI can make<br/>more content.<br/><span className="italic text-[#B5A5FF]">But does it know<br/>what matters?</span></h2><p className="mt-8 max-w-sm leading-7 text-[#D3CFDE]">A prompt can mimic a tone of voice. It can't reliably make commercial decisions without the context behind them. That's where we start.</p></div>
+            <div className="relative rounded-[28px] border border-white/15 bg-[#332F49] p-5 shadow-[0_24px_80px_rgba(0,0,0,0.16)] md:p-8">
+              <div className="mb-7 flex items-center justify-between border-b border-white/15 pb-5"><span className="text-xs font-bold tracking-[0.14em] text-[#DAD4F7]">A BUSINESS-SPECIFIC INTELLIGENCE SYSTEM</span><span className="h-2.5 w-2.5 rounded-full bg-[#B7A9FF]"/></div>
+              <div className="space-y-3">{knowledge.map(item=><div key={item.number} className={`flex items-start gap-4 rounded-2xl ${item.tone} p-5 text-[#28243D]`}><span className="pt-1 text-xs font-bold text-[#796BA9]">{item.number}</span><div><div className="text-lg font-semibold tracking-tight">{item.name}</div><div className="mt-1 text-xs text-[#676079]">{item.detail}</div></div><span className="ml-auto text-[#887AB3]">↗</span></div>)}</div>
+              <div className="flex justify-center py-5"><div className="flex items-center gap-3 text-[10px] font-bold uppercase tracking-[0.2em] text-[#BDB4DC]"><span className="h-7 w-px bg-[#AFA2E8]"/> Strategy-led workflows <span className="h-7 w-px bg-[#AFA2E8]"/></div></div>
+              <div className="grid grid-cols-2 gap-2">{outputs.map(output=><div key={output} className="rounded-xl border border-[#746D90] bg-[#47415F] px-3 py-3 text-center text-xs font-medium">{output}</div>)}</div>
+              <p className="mt-5 text-center text-[11px] text-[#C3BED3]">Human review before anything goes live.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" className="px-6 py-20 md:px-10 md:py-28"><div className="mx-auto max-w-[1320px]">
+        <div className="flex flex-col justify-between gap-8 md:flex-row md:items-end"><div><p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[#7766B8]">02 / Work with us</p><h2 className="mt-6 text-5xl font-medium tracking-[-0.07em] md:text-7xl">The right kind<br/><span className="italic text-[#7463CD]">of support.</span></h2></div><p className="max-w-sm text-lg leading-7 text-[#575367]">Some businesses need a marketing leader. Others need a better system—or a specific problem solved.</p></div>
+        <div className="mt-14 border-t border-[#2A263A]/25">
+          <a href="/fractional-cmo" className="group grid gap-5 border-b border-[#2A263A]/25 py-8 transition hover:pl-2 md:grid-cols-[90px_1fr_1fr_55px] md:items-center md:gap-8"><span className="text-sm text-[#8A7EAA]">01</span><h3 className="text-3xl font-medium tracking-[-0.05em] md:text-5xl">Fractional CMO</h3><p className="max-w-sm leading-7 text-[#5B566B]">Senior marketing leadership, direction and accountability—without the full-time hire.</p><span className="text-3xl transition group-hover:-translate-y-1 group-hover:translate-x-1">↗</span></a>
+          <a href="/marketing-operating-system" className="group grid gap-5 border-b border-[#2A263A]/25 py-8 transition hover:pl-2 md:grid-cols-[90px_1fr_1fr_55px] md:items-center md:gap-8"><span className="text-sm text-[#8A7EAA]">02</span><h3 className="text-3xl font-medium tracking-[-0.05em] md:text-5xl">Marketing operating system</h3><p className="max-w-sm leading-7 text-[#5B566B]">Build the business knowledge and AI workflows your existing marketing team can own.</p><span className="text-3xl transition group-hover:-translate-y-1 group-hover:translate-x-1">↗</span></a>
+          <a href="/marketing-consultancy" className="group grid gap-5 border-b border-[#2A263A]/25 py-8 transition hover:pl-2 md:grid-cols-[90px_1fr_1fr_55px] md:items-center md:gap-8"><span className="text-sm text-[#8A7EAA]">03</span><h3 className="text-3xl font-medium tracking-[-0.05em] md:text-5xl">Marketing consultancy</h3><p className="max-w-sm leading-7 text-[#5B566B]">Hands-on help with acquisition, SEO, lifecycle, analytics and conversion.</p><span className="text-3xl transition group-hover:-translate-y-1 group-hover:translate-x-1">↗</span></a>
+        </div>
+      </div></section>
+
+      <section id="approach" className="bg-[#DCD6F1] px-6 py-20 md:px-10 md:py-28"><div className="mx-auto grid max-w-[1320px] gap-12 md:grid-cols-2 md:gap-20">
+        <div><p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[#6955A6]">03 / How we think</p><h2 className="mt-6 text-5xl font-medium leading-[1.05] tracking-[-0.07em] md:text-7xl">Know the business.<br/><span className="italic text-[#6F5DBD]">Then do the work.</span></h2></div>
+        <div className="space-y-8 md:pt-12"><div className="border-t border-[#544A7D]/30 pt-5"><div className="text-xs font-bold uppercase tracking-widest text-[#6D5E9D]">Understand</div><p className="mt-3 text-lg leading-7">Capture the knowledge that shapes good decisions: products, customers, competitors, proof and commercial priorities.</p></div><div className="border-t border-[#544A7D]/30 pt-5"><div className="text-xs font-bold uppercase tracking-widest text-[#6D5E9D]">Prioritise</div><p className="mt-3 text-lg leading-7">Choose marketing work based on commercial value, not just traffic, trends or output volume.</p></div><div className="border-t border-[#544A7D]/30 pt-5"><div className="text-xs font-bold uppercase tracking-widest text-[#6D5E9D]">Execute and learn</div><p className="mt-3 text-lg leading-7">Use repeatable, human-reviewed workflows. Measure what happens and keep improving the system.</p></div></div>
+      </div></section>
+
+      <section className="bg-[#F2EFF8] px-6 py-24 md:px-10 md:py-32"><div className="mx-auto flex max-w-[1320px] flex-col items-start justify-between gap-10 md:flex-row md:items-end"><div><p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[#7766B8]">Start a conversation</p><h2 className="mt-6 text-5xl font-medium leading-[1.05] tracking-[-0.07em] md:text-8xl">Let's make<br/><span className="italic text-[#7463CD]">marketing matter.</span></h2></div><a href="mailto:hello@ootle.io?subject=Marketing%20enquiry" className="flex h-28 w-28 items-center justify-center rounded-full bg-[#272439] text-center text-sm font-bold text-white transition hover:bg-[#6955D5] md:h-36 md:w-36">Get in touch ↗</a></div></section>
+      <footer className="border-t border-[#2A263A]/15 px-6 py-7 md:px-10"><div className="mx-auto flex max-w-[1320px] flex-wrap items-center justify-between gap-4 text-xs text-[#6B667B]"><span className="text-xl font-black tracking-[-0.09em] text-[#272439]">ootle.</span><span>Independent marketing consultancy · © {new Date().getFullYear()} Ootle</span><a href="mailto:hello@ootle.io" className="hover:text-[#6955D5]">hello@ootle.io ↗</a></div></footer>
+    </main>
+  );
+}
