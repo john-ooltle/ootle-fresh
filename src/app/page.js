@@ -1,3 +1,4 @@
+import ServiceExplorer from "./components/ServiceExplorer";
 import MotionEnhancements from "./components/MotionEnhancements";
 /* eslint-disable react/no-unescaped-entities */
 export const metadata = {
@@ -106,17 +107,7 @@ export default function Home() {
       </div>
     </section>
 
-    <section id="services" data-reveal className="mx-auto max-w-[1300px] px-5 py-20 sm:px-8 lg:py-28">
-      <div className="flex flex-col justify-between gap-5 md:flex-row md:items-end"><div><p className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-[#6B4CE8]">Our services</p><h2 className="mt-4 text-[clamp(2.5rem,4.5vw,4.5rem)] font-extrabold leading-[1.12] tracking-[-0.065em]">Three ways to work with us.</h2></div><p className="max-w-[380px] text-[14px] leading-7 text-[#656382]">Whether you need strategic leadership, a complete marketing system or help with specific projects, we tailor our approach to your goals.</p></div>
-      <div className="mt-9 grid gap-4 md:grid-cols-3">{serviceCards.map(card=><a key={card.number} href={card.href} className={`group relative flex min-h-[365px] flex-col overflow-hidden rounded-[22px] p-7 transition hover:-translate-y-1 hover:shadow-[0_20px_45px_rgba(55,40,110,0.15)] ${card.theme === "cmo" ? "bg-[linear-gradient(135deg,#171633,#3B276D_75%,#6E4AA0)] text-white" : card.theme === "os" ? "bg-[linear-gradient(135deg,#EEE9FF,#DDD5FA)] text-[#252143]" : "bg-[linear-gradient(135deg,#FBF0E8,#F6E7DF)] text-[#252143]"}`}>
-        <span className={`text-[13px] font-medium ${card.theme === "cmo" ? "text-[#D7C8FF]" : "text-[#6D59B3]"}`}>{card.number}</span>
-        <h3 className="relative z-10 mt-6 max-w-[250px] text-[26px] font-extrabold leading-[1.12] tracking-[-0.05em]">{card.title}</h3>
-        <p className="relative z-10 mt-4 max-w-[240px] text-[13px] font-semibold leading-[1.5]">{card.description}</p>
-        <p className={`relative z-10 mt-4 max-w-[235px] text-[12px] leading-[1.7] ${card.theme === "cmo" ? "text-[#E3DDF4]" : "text-[#66617B]"}`}>{card.detail}</p>
-        <span className={`relative z-10 mt-auto pt-8 text-[12px] font-bold ${card.theme === "cmo" ? "text-[#BCA6FF]" : "text-[#6547CD]"}`}>Learn more <span className="ml-1 transition group-hover:ml-3">→</span></span>
-        <ServiceArt theme={card.theme}/>
-      </a>)}</div>
-    </section>
+    <ServiceExplorer />
 
     <section id="why-ootle" className="relative overflow-hidden bg-[#FCFBFF] px-5 py-20 sm:px-8 lg:py-24">
       <div className="pointer-events-none absolute -right-24 top-0 h-72 w-72 rounded-full bg-[#EAE3FF]/60 blur-3xl"/>
