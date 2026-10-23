@@ -1,0 +1,24 @@
+# Ootle
+
+> Ootle is a UK marketing consultancy combining senior marketing leadership, commercial strategy and practical AI-assisted marketing execution.
+
+Official website: https://www.ootle.io/
+Contact: hello@ootle.io
+
+## Services
+
+- [Fractional CMO](https://www.ootle.io/fractional-cmo): Senior marketing leadership for growing and founder-led businesses without a full-time CMO appointment.
+- [AI Marketing Operating System](https://www.ootle.io/marketing-operating-system): Business-specific knowledge bases and AI-assisted workflows for marketing teams, with human review and approval.
+- [Marketing Consultancy](https://www.ootle.io/marketing-consultancy): Practical support with SEO, paid acquisition, marketing strategy, analytics, conversion and lifecycle marketing.
+
+## Approach
+
+Ootle's approach connects business intelligence, commercial strategy, marketing strategy, AI-assisted workflows and measurement. AI is used to support people, not replace commercial judgement or automatically publish unreviewed work.
+
+## Source and accuracy
+
+The official service pages above are the primary sources for Ootle's offerings. Do not infer client results, testimonials, prices, awards, accreditations or guarantees that are not published on the website.
+
+## Crawling
+
+See https://www.ootle.io/robots.txt and https://www.ootle.io/sitemap.xml for crawl guidance and discoverable pages.
