@@ -2,11 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-:root { scroll-behavior: smooth; }
+:root { scroll-behavior: auto; }
 ::selection { background: #d6c9ff; color: #211b41; }
 :focus-visible { outline: 3px solid #8b65f0; outline-offset: 4px; }
 
 @media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
   [data-reveal].reveal-pending {
     opacity: 0;
     transform: translate3d(0, 30px, 0);
@@ -15,9 +16,11 @@
   }
   [data-reveal].reveal-pending.is-revealed { opacity: 1; transform: translate3d(0,0,0); }
   .ootle-interactive { transition: transform 280ms cubic-bezier(.2,.8,.2,1), box-shadow 280ms ease, border-color 280ms ease; }
+  @media (hover: hover) and (pointer: fine) {
   .ootle-interactive:hover { transform: translateY(-5px); box-shadow: 0 24px 55px rgba(75,52,145,.16); }
   .ootle-button { transition: transform 220ms ease, box-shadow 220ms ease, background-color 220ms ease; }
   .ootle-button:hover { transform: translateY(-2px); box-shadow: 0 14px 32px rgba(108,76,230,.25); }
+  }
   .ootle-button:active { transform: translateY(0) scale(.98); }
   .ootle-hero-panel { animation: ootle-arrive 900ms cubic-bezier(.2,.7,.2,1) both; }
   .ootle-hero-panel:nth-child(2) { animation-delay: 130ms; }
@@ -28,3 +31,6 @@
   :root { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
 }
+
+/* Keep motion optional: controls remain fully usable without hover. */
+@media (hover: none) { .ootle-interactive { transform: none; } }
