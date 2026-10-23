@@ -67,7 +67,7 @@ function ServiceArt({ theme }) {
   return <div aria-hidden="true" className="absolute bottom-6 right-5 flex h-36 w-36 items-end justify-center gap-3 rounded-2xl border border-white bg-white/90 p-5 shadow-[0_18px_50px_rgba(132,88,65,0.15)]"><span className="h-[38%] w-6 rounded-t-md bg-[#C1B2F1]"/><span className="h-[62%] w-6 rounded-t-md bg-[#8F77DE]"/><span className="h-[87%] w-6 rounded-t-md bg-[#5844C4]"/><span className="absolute right-4 top-4 text-[#5C49C9]">↗</span></div>;
 }
 export default function Home() {
-  return <><MotionEnhancements/><main className="overflow-x-hidden bg-white text-[#1B1B3D]">
+  return <><MotionEnhancements/><><a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-white focus:px-5 focus:py-3 focus:text-[#242044] focus:shadow-lg">Skip to content</a><main id="main-content" className="overflow-x-hidden bg-white text-[#1B1B3D]">
     <header className="relative z-20 border-b border-[#EEEAF8] bg-[#F8F6FF]">
       <div className="mx-auto flex max-w-[1300px] items-center justify-between gap-4 px-5 py-5 sm:px-8">
         <a href="/" aria-label="Ootle home" className="text-[28px] font-black tracking-[-0.09em]">ootle<span className="text-[#7254ED]">.</span></a>
@@ -134,4 +134,4 @@ export default function Home() {
 
     <section className="relative overflow-hidden bg-[radial-gradient(ellipse_at_90%_100%,#4B347B_0%,#1A1839_55%,#14132D_100%)] px-5 py-20 text-white sm:px-8"><div className="pointer-events-none absolute -bottom-44 -left-20 h-80 w-80 rounded-full bg-[#8258C6]/20 blur-3xl"/><div className="relative mx-auto flex max-w-[1300px] flex-col justify-between gap-8 md:flex-row md:items-center"><div><p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#B8A7E6]">Ready to build a smarter marketing function?</p><h2 className="mt-5 max-w-[760px] text-[clamp(2.2rem,4vw,4.4rem)] font-extrabold leading-[1.15] tracking-[-0.06em]">Let's make your marketing work harder.</h2></div><div className="shrink-0"><a href="mailto:hello@ootle.io?subject=Marketing%20enquiry" className="inline-flex rounded-full bg-[#7954EC] px-8 py-4 text-sm font-bold text-white shadow-[0_10px_35px_rgba(114,84,232,0.25)] hover:bg-[#8A6AFF]">Get in touch <span className="ml-3">↗</span></a><p className="mt-3 text-center text-xs text-[#D0C8E8]">A conversation about your priorities.</p></div></div></section>
     <footer className="bg-[#14132D] px-5 py-7 text-white/60 sm:px-8"><div className="mx-auto flex max-w-[1300px] flex-wrap items-center justify-between gap-4 text-xs"><a href="/" className="text-2xl font-black tracking-[-0.09em] text-white">ootle.</a><span>© {new Date().getFullYear()} Ootle · Senior marketing expertise, smarter execution.</span><a className="hover:text-white" href="mailto:hello@ootle.io">hello@ootle.io ↗</a></div></footer>
-  </main></>;}
+  </main></></>; }
