@@ -5,7 +5,7 @@ export const metadata = {
   title: "AI Marketing Operating System",
   description: "Build a business-specific AI marketing operating system with structured knowledge, repeatable workflows, human review and team handover.",
   alternates: { canonical: "/marketing-operating-system" },
-  openGraph: { title: "AI Marketing Operating System | Ootle", description: "Build a business-specific AI marketing operating system with structured knowledge, repeatable workflows, human review and team handover.", url, type: "website" },
+  openGraph: { title: "AI Marketing Operating System | Ootle", description: "Build a business-specific AI marketing operating system with structured knowledge, repeatable workflows, human review and team handover.", url, type: "website", images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Ootle — Senior marketing leadership and smarter execution" }] },
 };
 
 const schema = {
