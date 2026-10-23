@@ -20,9 +20,14 @@ const schema = {
   areaServed: { "@type": "Country", name: "United Kingdom" },
 };
 
+const breadcrumbs = { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [
+  { "@type": "ListItem", position: 1, name: "Home", item: "https://www.ootle.io/" },
+  { "@type": "ListItem", position: 2, name: schema.name, item: url },
+] };
+
 export default function Page() {
   return <>
-    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} />
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify([schema, breadcrumbs]).replace(/</g, "\\u003c") }} />
     <ServicePage kind="marketing-operating-system" />
   </>;
 }
