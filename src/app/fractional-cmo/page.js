@@ -5,7 +5,7 @@ export const metadata = {
   title: "Fractional CMO Services",
   description: "Senior marketing leadership for growing businesses. Commercial strategy, acquisition priorities, hands-on direction and accountability without a full-time CMO.",
   alternates: { canonical: "/fractional-cmo" },
-  openGraph: { title: "Fractional CMO Services | Ootle", description: "Senior marketing leadership for growing businesses. Commercial strategy, acquisition priorities, hands-on direction and accountability without a full-time CMO.", url, type: "website" },
+  openGraph: { title: "Fractional CMO Services | Ootle", description: "Senior marketing leadership for growing businesses. Commercial strategy, acquisition priorities, hands-on direction and accountability without a full-time CMO.", url, type: "website", images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Ootle — Senior marketing leadership and smarter execution" }] },
 };
 
 const schema = {
