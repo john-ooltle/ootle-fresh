@@ -1,79 +1,128 @@
+/* eslint-disable react/no-unescaped-entities */
 export const metadata = {
-  title: "Ootle — Marketing leadership, built around your business",
-  description: "Senior marketing leadership and AI-assisted marketing systems grounded in your business knowledge, commercial strategy and customers.",
+  title: "Ootle | Senior Marketing Leadership & AI-Powered Execution",
+  description: "Build a smarter marketing function with experienced marketing leadership, commercial intelligence and business-specific AI workflows.",
 };
 
-const knowledge = [
-  { number: "01", name: "Business truth", detail: "Products · customers · positioning", tone: "bg-[#EEEAF8]" },
-  { number: "02", name: "Commercial context", detail: "Revenue · priorities · competitors", tone: "bg-[#E8E8FF]" },
-  { number: "03", name: "Marketing intelligence", detail: "Channels · opportunities · evidence", tone: "bg-[#E6F0EC]" },
+const sources = [
+  { icon: "▤", label: "Business knowledge", items: ["Products & services", "Target customers", "Competitors", "Brand & positioning"], accent: "violet" },
+  { icon: "◈", label: "Commercial strategy", items: ["Revenue goals", "Key opportunities", "Differentiation", "Decision rules"], accent: "peach" },
 ];
-
-const outputs = ["SEO & content", "Campaigns", "Email & lifecycle", "Insights & reporting"];
-
+const workflows = ["Blog & SEO", "Social media", "Email campaigns", "Reports & insights"];
+const execution = ["Website", "Email", "Social media", "Paid campaigns"];
+const leftBrain = [
+  { symbol: "▣", title: "Your business", desc: "Products, pricing, proof, goals", color: "bg-[#EEE9FF]" },
+  { symbol: "♙", title: "Your customers", desc: "Audiences, use cases, buying motivations", color: "bg-[#FCE8F1]" },
+  { symbol: "◎", title: "Your market", desc: "Competitors, trends, opportunities", color: "bg-[#DFF5F3]" },
+  { symbol: "♡", title: "Your brand", desc: "Tone of voice, positioning, evidence", color: "bg-[#FFF0DE]" },
+];
+const rightBrain = [
+  { symbol: "↗", title: "Strategic planning", desc: "Prioritised opportunities and channel strategy", color: "bg-[#E5F5FA]" },
+  { symbol: "✎", title: "Content creation", desc: "Blogs, social, newsletters and campaigns", color: "bg-[#FBE6F8]" },
+  { symbol: "◉", title: "Performance insights", desc: "Analytics, reporting and recommendations", color: "bg-[#DFF5F3]" },
+  { symbol: "ϟ", title: "Consistent execution", desc: "On-brand, commercially focused marketing", color: "bg-[#FFF0DE]" },
+];
+const serviceCards = [
+  { number: "01", title: "Fractional CMO", description: "Senior marketing leadership, without the full-time CMO.", detail: "Strategy, execution and accountability to help you acquire more customers and build a stronger marketing function.", href: "/fractional-cmo", theme: "cmo" },
+  { number: "02", title: "AI Marketing Operating System", description: "Give your marketing team a business brain for AI.", detail: "We set up a structured knowledge base, workflows and tool integrations, so you can do more with a smaller team.", href: "/marketing-operating-system", theme: "os" },
+  { number: "03", title: "Marketing Consultancy", description: "Practical help with your biggest marketing opportunities.", detail: "SEO, PPC, conversion, analytics and strategy, built around your commercial goals.", href: "/marketing-consultancy", theme: "consulting" },
+];
+function MiniCard({ title, items, type = "purple" }) {
+  return <div className="relative rounded-[18px] border border-white/80 bg-white/90 p-4 shadow-[0_18px_50px_rgba(55,40,130,0.12)] backdrop-blur-md sm:p-5">
+    <div className="mb-3 text-[12px] font-bold text-[#1C1B3B]">{title}</div>
+    <div className="space-y-2">{items.map((item, i) => <div key={item} className="flex items-center gap-2 text-[10px] font-medium text-[#515173] sm:text-[11px]"><span className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-md text-[10px] ${type === "peach" ? "bg-[#FFE8DE] text-[#9C6185]" : type === "mint" ? "bg-[#DDF6F4] text-[#258D99]" : "bg-[#EAE5FF] text-[#6650CC]"}`}>{["▤", "✦", "◎", "▥"][i]}</span>{item}</div>)}</div>
+  </div>;
+}
+function KnowledgeVisual() {
+  return <div className="relative mx-auto w-full max-w-[630px]">
+    <div className="pointer-events-none absolute inset-5 rounded-[40%] bg-[#C8B9FF]/35 blur-3xl" />
+    <div className="relative grid grid-cols-2 gap-3 pb-3 sm:gap-4">
+      <MiniCard title="Business knowledge" items={sources[0].items} />
+      <MiniCard title="Commercial strategy" items={sources[1].items} type="peach" />
+    </div>
+    <div className="relative mx-auto my-3 w-[92%] rounded-[22px] border border-white/90 bg-[#ECE9FF]/95 p-3 shadow-[0_22px_70px_rgba(81,57,175,0.22)] sm:p-4">
+      <div className="rounded-[16px] border border-[#D7D1F4] bg-white/90 p-3 sm:p-4">
+        <div className="flex items-center justify-between gap-2 border-b border-[#E8E4F6] pb-3"><span className="text-xl font-black tracking-[-0.09em] text-[#28234D]">ootle<span className="text-[#6E4AF0]">.</span></span><span className="rounded-full bg-[#EAE5FF] px-2 py-1 text-[9px] font-bold uppercase tracking-wide text-[#6A53C7]">Marketing intelligence</span></div>
+        <p className="mt-3 text-[11px] font-bold text-[#272448]">Your marketing system</p>
+        <div className="mt-3 grid grid-cols-4 gap-2">{[["▤", "Understand"], ["▦", "Plan"], ["✧", "Create"], ["▥", "Measure"]].map(([icon, label], i) => <div key={label} className="rounded-xl bg-[#F5F3FF] px-1 py-3 text-center"><div className={`mx-auto flex h-8 w-8 items-center justify-center rounded-lg text-lg ${i === 2 ? "bg-[#DFD5FF] text-[#6C46E8]" : "bg-white text-[#6552C6]"}`}>{icon}</div><div className="mt-2 text-[9px] font-semibold text-[#393459]">{label}</div></div>)}</div>
+      </div>
+    </div>
+    <div className="relative grid grid-cols-2 gap-3 pt-1 sm:gap-4">
+      <MiniCard title="AI-assisted workflows" items={workflows} />
+      <MiniCard title="Marketing execution" items={execution} type="mint" />
+    </div>
+    <div className="relative mt-3 text-center text-[10px] font-medium text-[#6E6698]">Illustration of the Ootle methodology · Human approval at every stage</div>
+  </div>;
+}
+function BrainRow({ item }) {
+  return <div className="flex min-w-0 items-center gap-3 rounded-2xl border border-[#E7E3F5] bg-white/90 p-3 shadow-[0_8px_25px_rgba(58,48,121,0.08)] sm:p-4">
+    <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl text-xl text-[#5142B0] ${item.color}`}>{item.symbol}</span>
+    <div className="min-w-0"><p className="text-xs font-bold text-[#20203E]">{item.title}</p><p className="mt-1 text-[10px] leading-[1.4] text-[#666586]">{item.desc}</p></div>
+  </div>;
+}
+function ServiceArt({ theme }) {
+  if (theme === "cmo") return <div aria-hidden="true" className="absolute bottom-0 right-0 h-[170px] w-[180px]"><div className="absolute bottom-5 right-7 h-24 w-28 rounded-2xl bg-[#9D89EE]/70 shadow-xl"/><div className="absolute bottom-12 right-16 flex h-24 w-24 flex-col items-center justify-center rounded-2xl border border-white/30 bg-[#DCD4FF] shadow-[0_20px_35px_rgba(0,0,0,0.2)]"><span className="text-3xl text-[#5441A9]">♟</span><span className="mt-1 h-1.5 w-12 rounded-full bg-[#A597E6]"/><span className="mt-1 h-1.5 w-9 rounded-full bg-[#B7ABED]"/></div><div className="absolute bottom-5 right-0 flex h-20 w-20 items-end gap-1.5 rounded-xl bg-[#E5A6D0]/85 p-4 shadow-xl">{[35, 60, 85].map((h) => <span key={h} className="w-3 rounded-t bg-[#6651C5]" style={{height:`${h}%`}}/>)}</div></div>;
+  if (theme === "os") return <div aria-hidden="true" className="absolute bottom-6 right-5 h-[165px] w-[170px]"><div className="absolute inset-4 rotate-[-10deg] rounded-[26px] bg-[#B9A8F8]/50 blur-xl"/><div className="absolute right-1 top-2 h-24 w-24 rounded-2xl border border-white bg-white/70 p-3 shadow-xl"><span className="text-3xl text-[#7157DA]">✦</span><div className="mt-2 h-2 w-12 rounded-full bg-[#B7A8EF]"/><div className="mt-2 h-2 w-16 rounded-full bg-[#D8CEF8]"/></div>{[0,1,2].map(i=><div key={i} className="absolute left-1 flex h-9 w-24 items-center gap-2 rounded-lg bg-[#6D53C7]/90 px-3 shadow-lg" style={{bottom:`${12+i*44}px`}}><span className="h-4 w-4 rounded bg-white/70"/><span className="h-1.5 w-10 rounded bg-white/50"/></div>)}</div>;
+  return <div aria-hidden="true" className="absolute bottom-6 right-5 flex h-36 w-36 items-end justify-center gap-3 rounded-2xl border border-white bg-white/90 p-5 shadow-[0_18px_50px_rgba(132,88,65,0.15)]"><span className="h-[38%] w-6 rounded-t-md bg-[#C1B2F1]"/><span className="h-[62%] w-6 rounded-t-md bg-[#8F77DE]"/><span className="h-[87%] w-6 rounded-t-md bg-[#5844C4]"/><span className="absolute right-4 top-4 text-[#5C49C9]">↗</span></div>;
+}
 export default function Home() {
-  return (
-    <main className="min-h-screen bg-[#F2EFF8] text-[#222034]">
-      <header className="relative z-20 border-b border-[#28243D]/10 bg-[#F2EFF8]">
-        <div className="mx-auto flex max-w-[1320px] items-center justify-between gap-5 px-6 py-6 md:px-10">
-          <a href="/" className="text-[28px] font-black tracking-[-0.09em] leading-none" aria-label="Ootle home">ootle<span className="text-[#6955D5]">.</span></a>
-          <nav className="hidden items-center gap-9 text-[13px] font-semibold tracking-wide md:flex">
-            <a href="#thinking" className="hover:text-[#6955D5]">Our thinking</a>
-            <a href="#services" className="hover:text-[#6955D5]">Services</a>
-            <a href="#approach" className="hover:text-[#6955D5]">How it works</a>
-          </nav>
-          <a href="mailto:hello@ootle.io?subject=Let's%20talk%20marketing" className="rounded-full bg-[#262238] px-5 py-3 text-xs font-bold text-white transition hover:bg-[#5745B8]">Let’s talk <span aria-hidden="true" className="ml-3">↗</span></a>
-        </div>
-      </header>
+  return <main className="overflow-x-hidden bg-white text-[#1B1B3D]">
+    <header className="relative z-20 border-b border-[#EEEAF8] bg-[#F8F6FF]">
+      <div className="mx-auto flex max-w-[1300px] items-center justify-between gap-4 px-5 py-5 sm:px-8">
+        <a href="/" aria-label="Ootle home" className="text-[28px] font-black tracking-[-0.09em]">ootle<span className="text-[#7254ED]">.</span></a>
+        <nav className="hidden items-center gap-8 text-[13px] font-semibold text-[#29274A] md:flex"><a href="#services" className="hover:text-[#7254ED]">Services</a><a href="#approach" className="hover:text-[#7254ED]">Approach</a><a href="#why-ootle" className="hover:text-[#7254ED]">Why Ootle</a></nav>
+        <a href="mailto:hello@ootle.io?subject=Ootle%20enquiry" className="rounded-full bg-[#6B4CE8] px-5 py-3 text-xs font-bold text-white shadow-[0_7px_20px_rgba(107,76,232,0.25)] transition hover:bg-[#5637C9]">Get in touch <span className="ml-2">↗</span></a>
+      </div>
+    </header>
 
-      <section className="relative overflow-hidden px-6 pb-20 pt-16 md:px-10 md:pb-28 md:pt-24">
-        <div className="pointer-events-none absolute -right-48 -top-60 h-[600px] w-[600px] rounded-full border border-[#A59AD7]/30" />
-        <div className="pointer-events-none absolute -right-20 -top-32 h-[420px] w-[420px] rounded-full border border-[#A59AD7]/30" />
-        <div className="relative mx-auto max-w-[1320px]">
-          <div className="max-w-[990px]">
-            <div className="mb-9 flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.2em] text-[#675B8E]"><span className="h-[1px] w-8 bg-[#7766B8]"/> Independent marketing consultancy</div>
-            <h1 className="text-[clamp(3.7rem,8.7vw,8.5rem)] font-semibold leading-[0.98] tracking-[-0.085em]">
-              Less noise.<br/><span className="font-normal italic text-[#7463CD]">More knowing.</span><br/>Better marketing.
-            </h1>
+    <section className="relative overflow-hidden bg-[radial-gradient(ellipse_at_70%_40%,#E7E0FF_0%,#F6F3FF_44%,#FBFAFF_78%)]">
+      <div className="pointer-events-none absolute right-[-8%] top-[-12%] h-[550px] w-[550px] rotate-45 rounded-[100px] bg-[#C9B8FF]/20 blur-2xl"/>
+      <div className="relative mx-auto grid max-w-[1300px] items-center gap-12 px-5 pb-16 pt-16 sm:px-8 lg:grid-cols-[0.95fr_1.05fr] lg:gap-8 lg:pb-24 lg:pt-24">
+        <div className="relative z-10">
+          <p className="mb-6 text-[10px] font-extrabold uppercase tracking-[0.18em] text-[#6B4CE8]">Senior marketing leadership. AI-powered execution.</p>
+          <h1 className="max-w-[660px] text-[clamp(3.25rem,5.4vw,5.9rem)] font-extrabold leading-[1.04] tracking-[-0.07em]">Less noise.<br/>More knowing.<br/><span className="text-[#7151E7]">Better marketing.</span></h1>
+          <p className="mt-7 max-w-[520px] text-[16px] leading-[1.75] text-[#555573] sm:text-[18px]">We help growing businesses build smarter marketing functions by combining senior marketing expertise with AI-powered systems tailored to their business.</p>
+          <div className="mt-8 flex flex-wrap gap-3"><a href="mailto:hello@ootle.io?subject=Ootle%20enquiry" className="rounded-full bg-[#6B4CE8] px-7 py-3.5 text-sm font-bold text-white shadow-[0_12px_30px_rgba(108,76,230,0.25)] hover:bg-[#5739D2]">Get in touch <span className="ml-2">↗</span></a><a href="#approach" className="rounded-full border border-[#CEC4EF] bg-white/80 px-7 py-3.5 text-sm font-bold text-[#252248] hover:border-[#7054E0]">See how it works <span className="ml-2 text-[#7151E7]">▶</span></a></div>
+          <div className="mt-11 grid max-w-[510px] grid-cols-3 gap-4 border-t border-[#E2DCF3] pt-6">{[["◎","Commercially focused"],["✧","AI-assisted execution"],["▥","Built for growing businesses"]].map(([icon,txt])=><div key={txt} className="flex items-start gap-2"><span className="text-2xl text-[#7051E8]">{icon}</span><span className="text-[11px] font-semibold leading-[1.4]">{txt}</span></div>)}</div>
+        </div>
+        <KnowledgeVisual/>
+      </div>
+    </section>
+
+    <section className="border-y border-[#F0EDF9] bg-white py-7"><div className="mx-auto max-w-[1300px] px-5 sm:px-8"><p className="mb-5 text-center text-[10px] font-extrabold uppercase tracking-[0.19em] text-[#7465B7]">Built for ambitious teams across</p><div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-5 text-[12px] font-semibold text-[#77769F]">{[["☁","SaaS"],["▥","Professional services"],["◇","E-commerce"],["♡","Health & fitness"],["⌂","Education"],["♧","Recruitment"]].map(([icon,txt])=><span key={txt} className="flex items-center gap-2"><span className="text-xl text-[#8581BE]">{icon}</span>{txt}</span>)}</div></div></section>
+
+    <section id="approach" className="bg-[linear-gradient(135deg,#FAF9FF_0%,#F0ECFF_65%,#F8F7FF_100%)] px-5 py-20 sm:px-8 lg:py-28">
+      <div className="mx-auto grid max-w-[1300px] items-center gap-12 lg:grid-cols-[0.75fr_1.25fr]">
+        <div><p className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-[#6B4CE8]">The Ootle approach</p><h2 className="mt-6 text-[clamp(2.6rem,4vw,4.4rem)] font-extrabold leading-[1.08] tracking-[-0.065em]">A business brain<br/>for better marketing.</h2><p className="mt-6 max-w-[430px] text-[16px] leading-[1.8] text-[#565575]">We capture what makes your business unique, turn it into a structured knowledge base and use it to guide AI-assisted marketing across all channels.</p><a href="/marketing-operating-system" className="mt-7 inline-flex rounded-full border border-[#BEB2E9] bg-white px-6 py-3 text-sm font-bold text-[#2D2854] shadow-sm hover:border-[#7151E7]">Explore the approach <span className="ml-3">→</span></a></div>
+        <div className="relative rounded-[30px] border border-white/70 bg-white/35 p-4 shadow-[0_24px_80px_rgba(87,65,155,0.08)] sm:p-6">
+          <div className="grid grid-cols-1 items-center gap-4 sm:grid-cols-[1fr_0.8fr_1fr] sm:gap-3">
+            <div className="grid grid-cols-2 gap-2 sm:grid-cols-1">{leftBrain.map(item=><BrainRow key={item.title} item={item}/>)}</div>
+            <div className="relative flex items-center justify-center py-7 sm:py-0"><div className="absolute h-44 w-44 rounded-[35%] bg-[#A68DFF]/20 blur-2xl"/><div className="absolute h-44 w-44 rotate-45 rounded-[28px] border border-[#BCAAFB]/40 bg-[#C6B6FF]/20"/><div className="relative flex h-32 w-32 flex-col items-center justify-center rounded-[26px] bg-[linear-gradient(140deg,#9B7BFF,#5030BA)] text-white shadow-[0_18px_40px_rgba(94,58,187,0.3)] sm:h-36 sm:w-36"><span className="text-3xl font-black tracking-[-0.1em]">ootle.</span><span className="mt-2 max-w-[90px] text-center text-[10px] leading-4">Your marketing intelligence system</span></div></div>
+            <div className="grid grid-cols-2 gap-2 sm:grid-cols-1">{rightBrain.map(item=><BrainRow key={item.title} item={item}/>)}</div>
           </div>
-          <div className="mt-12 flex flex-col gap-8 border-t border-[#262238]/20 pt-7 md:ml-auto md:w-[47%]">
-            <p className="text-lg leading-[1.65] text-[#4D4960] md:text-[22px]">Good marketing starts with understanding the business. We bring senior marketing judgement together with AI systems that know your customers, your competitors and what actually drives growth.</p>
-            <a href="#thinking" className="group flex w-fit items-center gap-4 text-sm font-bold">Explore our approach <span className="flex h-10 w-10 items-center justify-center rounded-full border border-[#29253B] transition group-hover:bg-[#29253B] group-hover:text-white">↘</span></a>
-          </div>
+          <p className="mt-5 text-center text-[10px] font-medium text-[#8278AA]">Conceptual illustration — knowledge and strategy guide every workflow</p>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="thinking" className="bg-[#272439] px-6 py-20 text-[#F6F3FF] md:px-10 md:py-28">
-        <div className="mx-auto max-w-[1320px]">
-          <div className="grid gap-10 md:grid-cols-[0.85fr_1.15fr] md:gap-20">
-            <div><div className="text-[11px] font-bold uppercase tracking-[0.22em] text-[#B6ABE7]">01 / The difference</div><h2 className="mt-7 text-4xl font-medium leading-[1.07] tracking-[-0.06em] md:text-6xl">AI can make<br/>more content.<br/><span className="italic text-[#B5A5FF]">But does it know<br/>what matters?</span></h2><p className="mt-8 max-w-sm leading-7 text-[#D3CFDE]">A prompt can mimic a tone of voice. It can't reliably make commercial decisions without the context behind them. That's where we start.</p></div>
-            <div className="relative rounded-[28px] border border-white/15 bg-[#332F49] p-5 shadow-[0_24px_80px_rgba(0,0,0,0.16)] md:p-8">
-              <div className="mb-7 flex items-center justify-between border-b border-white/15 pb-5"><span className="text-xs font-bold tracking-[0.14em] text-[#DAD4F7]">A BUSINESS-SPECIFIC INTELLIGENCE SYSTEM</span><span className="h-2.5 w-2.5 rounded-full bg-[#B7A9FF]"/></div>
-              <div className="space-y-3">{knowledge.map(item=><div key={item.number} className={`flex items-start gap-4 rounded-2xl ${item.tone} p-5 text-[#28243D]`}><span className="pt-1 text-xs font-bold text-[#796BA9]">{item.number}</span><div><div className="text-lg font-semibold tracking-tight">{item.name}</div><div className="mt-1 text-xs text-[#676079]">{item.detail}</div></div><span className="ml-auto text-[#887AB3]">↗</span></div>)}</div>
-              <div className="flex justify-center py-5"><div className="flex items-center gap-3 text-[10px] font-bold uppercase tracking-[0.2em] text-[#BDB4DC]"><span className="h-7 w-px bg-[#AFA2E8]"/> Strategy-led workflows <span className="h-7 w-px bg-[#AFA2E8]"/></div></div>
-              <div className="grid grid-cols-2 gap-2">{outputs.map(output=><div key={output} className="rounded-xl border border-[#746D90] bg-[#47415F] px-3 py-3 text-center text-xs font-medium">{output}</div>)}</div>
-              <p className="mt-5 text-center text-[11px] text-[#C3BED3]">Human review before anything goes live.</p>
-            </div>
-          </div>
-        </div>
-      </section>
+    <section id="services" className="mx-auto max-w-[1300px] px-5 py-20 sm:px-8 lg:py-28">
+      <div className="flex flex-col justify-between gap-5 md:flex-row md:items-end"><div><p className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-[#6B4CE8]">Our services</p><h2 className="mt-4 text-[clamp(2.5rem,4.5vw,4.5rem)] font-extrabold leading-[1.12] tracking-[-0.065em]">Three ways to work with us.</h2></div><p className="max-w-[380px] text-[14px] leading-7 text-[#656382]">Whether you need strategic leadership, a complete marketing system or help with specific projects, we tailor our approach to your goals.</p></div>
+      <div className="mt-9 grid gap-4 md:grid-cols-3">{serviceCards.map(card=><a key={card.number} href={card.href} className={`group relative flex min-h-[365px] flex-col overflow-hidden rounded-[22px] p-7 transition hover:-translate-y-1 hover:shadow-[0_20px_45px_rgba(55,40,110,0.15)] ${card.theme === "cmo" ? "bg-[linear-gradient(135deg,#171633,#3B276D_75%,#6E4AA0)] text-white" : card.theme === "os" ? "bg-[linear-gradient(135deg,#EEE9FF,#DDD5FA)] text-[#252143]" : "bg-[linear-gradient(135deg,#FBF0E8,#F6E7DF)] text-[#252143]"}`}>
+        <span className={`text-[13px] font-medium ${card.theme === "cmo" ? "text-[#D7C8FF]" : "text-[#6D59B3]"}`}>{card.number}</span>
+        <h3 className="relative z-10 mt-6 max-w-[250px] text-[26px] font-extrabold leading-[1.12] tracking-[-0.05em]">{card.title}</h3>
+        <p className="relative z-10 mt-4 max-w-[240px] text-[13px] font-semibold leading-[1.5]">{card.description}</p>
+        <p className={`relative z-10 mt-4 max-w-[235px] text-[12px] leading-[1.7] ${card.theme === "cmo" ? "text-[#E3DDF4]" : "text-[#66617B]"}`}>{card.detail}</p>
+        <span className={`relative z-10 mt-auto pt-8 text-[12px] font-bold ${card.theme === "cmo" ? "text-[#BCA6FF]" : "text-[#6547CD]"}`}>Learn more <span className="ml-1 transition group-hover:ml-3">→</span></span>
+        <ServiceArt theme={card.theme}/>
+      </a>)}</div>
+    </section>
 
-      <section id="services" className="px-6 py-20 md:px-10 md:py-28"><div className="mx-auto max-w-[1320px]">
-        <div className="flex flex-col justify-between gap-8 md:flex-row md:items-end"><div><p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[#7766B8]">02 / Work with us</p><h2 className="mt-6 text-5xl font-medium tracking-[-0.07em] md:text-7xl">The right kind<br/><span className="italic text-[#7463CD]">of support.</span></h2></div><p className="max-w-sm text-lg leading-7 text-[#575367]">Some businesses need a marketing leader. Others need a better system—or a specific problem solved.</p></div>
-        <div className="mt-14 border-t border-[#2A263A]/25">
-          <a href="/fractional-cmo" className="group grid gap-5 border-b border-[#2A263A]/25 py-8 transition hover:pl-2 md:grid-cols-[90px_1fr_1fr_55px] md:items-center md:gap-8"><span className="text-sm text-[#8A7EAA]">01</span><h3 className="text-3xl font-medium tracking-[-0.05em] md:text-5xl">Fractional CMO</h3><p className="max-w-sm leading-7 text-[#5B566B]">Senior marketing leadership, direction and accountability—without the full-time hire.</p><span className="text-3xl transition group-hover:-translate-y-1 group-hover:translate-x-1">↗</span></a>
-          <a href="/marketing-operating-system" className="group grid gap-5 border-b border-[#2A263A]/25 py-8 transition hover:pl-2 md:grid-cols-[90px_1fr_1fr_55px] md:items-center md:gap-8"><span className="text-sm text-[#8A7EAA]">02</span><h3 className="text-3xl font-medium tracking-[-0.05em] md:text-5xl">Marketing operating system</h3><p className="max-w-sm leading-7 text-[#5B566B]">Build the business knowledge and AI workflows your existing marketing team can own.</p><span className="text-3xl transition group-hover:-translate-y-1 group-hover:translate-x-1">↗</span></a>
-          <a href="/marketing-consultancy" className="group grid gap-5 border-b border-[#2A263A]/25 py-8 transition hover:pl-2 md:grid-cols-[90px_1fr_1fr_55px] md:items-center md:gap-8"><span className="text-sm text-[#8A7EAA]">03</span><h3 className="text-3xl font-medium tracking-[-0.05em] md:text-5xl">Marketing consultancy</h3><p className="max-w-sm leading-7 text-[#5B566B]">Hands-on help with acquisition, SEO, lifecycle, analytics and conversion.</p><span className="text-3xl transition group-hover:-translate-y-1 group-hover:translate-x-1">↗</span></a>
-        </div>
-      </div></section>
+    <section id="why-ootle" className="bg-[#F8F7FF] px-5 py-20 sm:px-8"><div className="mx-auto grid max-w-[1300px] items-center gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+      <div><p className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-[#6B4CE8]">Why businesses work with Ootle</p><h2 className="mt-4 text-[clamp(2.5rem,4.2vw,4rem)] font-extrabold leading-[1.1] tracking-[-0.06em]">More impact.<br/>Less complexity.</h2><p className="mt-5 max-w-[420px] text-[15px] leading-7 text-[#63617D]">Experienced marketing judgement supported by systems that reflect how your business actually works—not generic prompts and disconnected campaigns.</p></div>
+      <div className="grid gap-3 sm:grid-cols-2">{[["◎","Strategic focus","Commercial priorities before content volume."],["ϟ","Efficient execution","Repeatable workflows with human oversight."],["▥","Measurable progress","Work linked to outcomes that matter."],["✦","Built for your business","Your knowledge, tools and team—not a one-size-fits-all template."]].map(([icon,title,detail])=><div key={title} className="rounded-2xl border border-[#E8E4F8] bg-white p-5 shadow-[0_8px_28px_rgba(82,62,152,0.06)]"><span className="text-2xl text-[#7354E7]">{icon}</span><h3 className="mt-3 text-sm font-bold">{title}</h3><p className="mt-2 text-[12px] leading-6 text-[#6C6988]">{detail}</p></div>)}</div>
+    </div></section>
 
-      <section id="approach" className="bg-[#DCD6F1] px-6 py-20 md:px-10 md:py-28"><div className="mx-auto grid max-w-[1320px] gap-12 md:grid-cols-2 md:gap-20">
-        <div><p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[#6955A6]">03 / How we think</p><h2 className="mt-6 text-5xl font-medium leading-[1.05] tracking-[-0.07em] md:text-7xl">Know the business.<br/><span className="italic text-[#6F5DBD]">Then do the work.</span></h2></div>
-        <div className="space-y-8 md:pt-12"><div className="border-t border-[#544A7D]/30 pt-5"><div className="text-xs font-bold uppercase tracking-widest text-[#6D5E9D]">Understand</div><p className="mt-3 text-lg leading-7">Capture the knowledge that shapes good decisions: products, customers, competitors, proof and commercial priorities.</p></div><div className="border-t border-[#544A7D]/30 pt-5"><div className="text-xs font-bold uppercase tracking-widest text-[#6D5E9D]">Prioritise</div><p className="mt-3 text-lg leading-7">Choose marketing work based on commercial value, not just traffic, trends or output volume.</p></div><div className="border-t border-[#544A7D]/30 pt-5"><div className="text-xs font-bold uppercase tracking-widest text-[#6D5E9D]">Execute and learn</div><p className="mt-3 text-lg leading-7">Use repeatable, human-reviewed workflows. Measure what happens and keep improving the system.</p></div></div>
-      </div></section>
-
-      <section className="bg-[#F2EFF8] px-6 py-24 md:px-10 md:py-32"><div className="mx-auto flex max-w-[1320px] flex-col items-start justify-between gap-10 md:flex-row md:items-end"><div><p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[#7766B8]">Start a conversation</p><h2 className="mt-6 text-5xl font-medium leading-[1.05] tracking-[-0.07em] md:text-8xl">Let's make<br/><span className="italic text-[#7463CD]">marketing matter.</span></h2></div><a href="mailto:hello@ootle.io?subject=Marketing%20enquiry" className="flex h-28 w-28 items-center justify-center rounded-full bg-[#272439] text-center text-sm font-bold text-white transition hover:bg-[#6955D5] md:h-36 md:w-36">Get in touch ↗</a></div></section>
-      <footer className="border-t border-[#2A263A]/15 px-6 py-7 md:px-10"><div className="mx-auto flex max-w-[1320px] flex-wrap items-center justify-between gap-4 text-xs text-[#6B667B]"><span className="text-xl font-black tracking-[-0.09em] text-[#272439]">ootle.</span><span>Independent marketing consultancy · © {new Date().getFullYear()} Ootle</span><a href="mailto:hello@ootle.io" className="hover:text-[#6955D5]">hello@ootle.io ↗</a></div></footer>
-    </main>
-  );
+    <section className="relative overflow-hidden bg-[radial-gradient(ellipse_at_90%_100%,#4B347B_0%,#1A1839_55%,#14132D_100%)] px-5 py-20 text-white sm:px-8"><div className="pointer-events-none absolute -bottom-44 -left-20 h-80 w-80 rounded-full bg-[#8258C6]/20 blur-3xl"/><div className="relative mx-auto flex max-w-[1300px] flex-col justify-between gap-8 md:flex-row md:items-center"><div><p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#B8A7E6]">Ready to build a smarter marketing function?</p><h2 className="mt-5 max-w-[760px] text-[clamp(2.2rem,4vw,4.4rem)] font-extrabold leading-[1.15] tracking-[-0.06em]">Let's make your marketing work harder.</h2></div><div className="shrink-0"><a href="mailto:hello@ootle.io?subject=Marketing%20enquiry" className="inline-flex rounded-full bg-[#7954EC] px-8 py-4 text-sm font-bold text-white shadow-[0_10px_35px_rgba(114,84,232,0.25)] hover:bg-[#8A6AFF]">Get in touch <span className="ml-3">↗</span></a><p className="mt-3 text-center text-xs text-[#D0C8E8]">A conversation about your priorities.</p></div></div></section>
+    <footer className="bg-[#14132D] px-5 py-7 text-white/60 sm:px-8"><div className="mx-auto flex max-w-[1300px] flex-wrap items-center justify-between gap-4 text-xs"><a href="/" className="text-2xl font-black tracking-[-0.09em] text-white">ootle.</a><span>© {new Date().getFullYear()} Ootle · Senior marketing expertise, smarter execution.</span><a className="hover:text-white" href="mailto:hello@ootle.io">hello@ootle.io ↗</a></div></footer>
+  </main>;
 }
